@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9e3dc5cee03894e2387fabb700081593
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/Demo Scripts/SFB_CameraRotate_v2.cs
+  uploadId: 716835

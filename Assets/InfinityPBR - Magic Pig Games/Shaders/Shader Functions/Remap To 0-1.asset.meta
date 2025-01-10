@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ff45213d95c558d4e9c23d915dffd2a3
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/Shaders/Shader Functions/Remap
+    To 0-1.asset
+  uploadId: 716835

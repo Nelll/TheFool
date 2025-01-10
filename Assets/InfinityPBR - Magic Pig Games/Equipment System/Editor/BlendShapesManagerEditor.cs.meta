@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b6bd1e7fc6eae49c79f34ba17525b34e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/Equipment System/Editor/BlendShapesManagerEditor.cs
+  uploadId: 716835

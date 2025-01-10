@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 42727044413e1f548a2cf2ba868ce472
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/Shaders/AV/Hair/AV Standard Hair.shader
+  uploadId: 716835

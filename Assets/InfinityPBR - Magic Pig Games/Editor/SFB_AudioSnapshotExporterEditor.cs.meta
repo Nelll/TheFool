@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 67c5578d3d6fe466b85db2f769173d12
+timeCreated: 1512957474
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/Editor/SFB_AudioSnapshotExporterEditor.cs
+  uploadId: 716835

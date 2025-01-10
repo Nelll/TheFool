@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 94c2d38007fb24defbaff32f63b93d58
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/Equipment System/Editor/EquipObjectMenu.cs
+  uploadId: 716835

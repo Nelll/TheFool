@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 673d27b888fb3477d9f5f8b53f272ad8
+timeCreated: 1466226770
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/_InfinityPBR - Bone Dragon/Textures
+    & Materials/Bone Dragon Default/BoneDragonSpine.mat
+  uploadId: 716835

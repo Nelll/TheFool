@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6b859768f03c74991a95479b0f70203d
+timeCreated: 1512791388
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 59119
+  packageName: Dragon Skeleton - Fantasy RPG
+  packageVersion: 4.3
+  assetPath: Assets/InfinityPBR - Magic Pig Games/Magic Spells & Particles/Scripts/SFB_LightFlicker.cs
+  uploadId: 716835
