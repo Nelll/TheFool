@@ -16,4 +16,4 @@ MonoBehaviour:
   _orientation: 2
   _customRotation: {x: 0, y: 0, z: 0}
   _localOriginYOffset: 0
-  _cellSize: {x: 1, y: 1, z: 1}
+  _cellSize: {x: 0.1, y: 1, z: 0.1}

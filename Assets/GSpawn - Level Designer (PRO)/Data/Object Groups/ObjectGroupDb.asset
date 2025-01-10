@@ -12,13 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdc5f1e3ddab65418bb342193ece696, type: 3}
   m_Name: ObjectGroupDb
   m_EditorClassIdentifier: 
-  _actionFilters: {fileID: 0}
+  _actionFilters: {fileID: 7095143324585442413}
   _sceneToObjectGroups:
-    _serializedKeys: []
-    _serializedValues: []
+    _serializedKeys:
+    - 99c9720ab356a0642a771bea13969a05
+    _serializedValues:
+    - _serializedList: []
   _sceneToDefaultObjectGroup:
     _serializedKeys: []
     _serializedValues: []
+--- !u!114 &7095143324585442413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65aff9267f84c04e9ceb3f9b5e44777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _belowGrid: 1
+  _aboveGrid: 1
+  _onGrid: 1
 --- !u!114 &8175379541184249437
 MonoBehaviour:
   m_ObjectHideFlags: 0
