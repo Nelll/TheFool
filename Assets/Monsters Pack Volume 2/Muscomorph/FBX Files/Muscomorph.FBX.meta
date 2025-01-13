@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 85f1ce7badb613040b0c9e4a88522f7c
+timeCreated: 1519186531
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Muscomorph_Body
+    100004: Muscomorph_JawLowerLeft_1
+    100006: Muscomorph_JawLowerLeft_2
+    100008: Muscomorph_JawLowerRight_1
+    100010: Muscomorph_JawLowerRight_2
+    100012: Muscomorph_JawUpperLeft_1
+    100014: Muscomorph_JawUpperLeft_2
+    100016: Muscomorph_JawUpperRight_1
+    100018: Muscomorph_JawUpperRight_2
+    100020: Muscomorph_LegLeftBack_1
+    100022: Muscomorph_LegLeftBack_2
+    100024: Muscomorph_LegLeftBack_3
+    100026: Muscomorph_LegLeftBack_4
+    100028: Muscomorph_LegLeftFront_1
+    100030: Muscomorph_LegLeftFront_2
+    100032: Muscomorph_LegLeftFront_3
+    100034: Muscomorph_LegLeftFront_4
+    100036: Muscomorph_LegLeftMiddle_1
+    100038: Muscomorph_LegLeftMiddle_2
+    100040: Muscomorph_LegLeftMiddle_3
+    100042: Muscomorph_LegLeftMiddle_4
+    100044: Muscomorph_LegRightBack_1
+    100046: Muscomorph_LegRightBack_2
+    100048: Muscomorph_LegRightBack_3
+    100050: Muscomorph_LegRightBack_4
+    100052: Muscomorph_LegRightFront_1
+    100054: Muscomorph_LegRightFront_2
+    100056: Muscomorph_LegRightFront_3
+    100058: Muscomorph_LegRightFront_4
+    100060: Muscomorph_LegRightMiddle_1
+    100062: Muscomorph_LegRightMiddle_2
+    100064: Muscomorph_LegRightMiddle_3
+    100066: Muscomorph_LegRightMiddle_4
+    100068: Muscomorph_Tail_1
+    100070: Muscomorph_Tail_2
+    100072: Muscomorph_Tail_3
+    100074: Muscomorph_Tail_4
+    100076: Muscomorph_Tail_5
+    100078: Muscomorph_Tail_6
+    100080: Muscomorph_Tail_7
+    100082: Muscomorph_Tail_8
+    100084: Muscomorph_TeethLowerLeft_1
+    100086: Muscomorph_TeethLowerLeft_2
+    100088: Muscomorph_TeethLowerRight_1
+    100090: Muscomorph_TeethLowerRight_2
+    100092: Muscomorph_TeethUpperLeft_1
+    100094: Muscomorph_TeethUpperLeft_2
+    100096: Muscomorph_TeethUpperRight_1
+    100098: Muscomorph_TeethUpperRight_2
+    100100: Muscomorph_WingLeft_A
+    100102: Muscomorph_WingLeft_B
+    100104: Muscomorph_WingRight_A
+    100106: Muscomorph_WingRight_B
+    100108: root
+    100110: SK_Muscomorph
+    100112: SK_MuscomorphHorns
+    100114: SK_MuscomorphTail
+    100116: SK_MuscomorphWingLeftA
+    100118: SK_MuscomorphWingLeftB
+    100120: SK_MuscomorphWingRighA
+    100122: SK_MuscomorphWingRightB
+    400000: //RootNode
+    400002: Muscomorph_Body
+    400004: Muscomorph_JawLowerLeft_1
+    400006: Muscomorph_JawLowerLeft_2
+    400008: Muscomorph_JawLowerRight_1
+    400010: Muscomorph_JawLowerRight_2
+    400012: Muscomorph_JawUpperLeft_1
+    400014: Muscomorph_JawUpperLeft_2
+    400016: Muscomorph_JawUpperRight_1
+    400018: Muscomorph_JawUpperRight_2
+    400020: Muscomorph_LegLeftBack_1
+    400022: Muscomorph_LegLeftBack_2
+    400024: Muscomorph_LegLeftBack_3
+    400026: Muscomorph_LegLeftBack_4
+    400028: Muscomorph_LegLeftFront_1
+    400030: Muscomorph_LegLeftFront_2
+    400032: Muscomorph_LegLeftFront_3
+    400034: Muscomorph_LegLeftFront_4
+    400036: Muscomorph_LegLeftMiddle_1
+    400038: Muscomorph_LegLeftMiddle_2
+    400040: Muscomorph_LegLeftMiddle_3
+    400042: Muscomorph_LegLeftMiddle_4
+    400044: Muscomorph_LegRightBack_1
+    400046: Muscomorph_LegRightBack_2
+    400048: Muscomorph_LegRightBack_3
+    400050: Muscomorph_LegRightBack_4
+    400052: Muscomorph_LegRightFront_1
+    400054: Muscomorph_LegRightFront_2
+    400056: Muscomorph_LegRightFront_3
+    400058: Muscomorph_LegRightFront_4
+    400060: Muscomorph_LegRightMiddle_1
+    400062: Muscomorph_LegRightMiddle_2
+    400064: Muscomorph_LegRightMiddle_3
+    400066: Muscomorph_LegRightMiddle_4
+    400068: Muscomorph_Tail_1
+    400070: Muscomorph_Tail_2
+    400072: Muscomorph_Tail_3
+    400074: Muscomorph_Tail_4
+    400076: Muscomorph_Tail_5
+    400078: Muscomorph_Tail_6
+    400080: Muscomorph_Tail_7
+    400082: Muscomorph_Tail_8
+    400084: Muscomorph_TeethLowerLeft_1
+    400086: Muscomorph_TeethLowerLeft_2
+    400088: Muscomorph_TeethLowerRight_1
+    400090: Muscomorph_TeethLowerRight_2
+    400092: Muscomorph_TeethUpperLeft_1
+    400094: Muscomorph_TeethUpperLeft_2
+    400096: Muscomorph_TeethUpperRight_1
+    400098: Muscomorph_TeethUpperRight_2
+    400100: Muscomorph_WingLeft_A
+    400102: Muscomorph_WingLeft_B
+    400104: Muscomorph_WingRight_A
+    400106: Muscomorph_WingRight_B
+    400108: root
+    400110: SK_Muscomorph
+    400112: SK_MuscomorphHorns
+    400114: SK_MuscomorphTail
+    400116: SK_MuscomorphWingLeftA
+    400118: SK_MuscomorphWingLeftB
+    400120: SK_MuscomorphWingRighA
+    400122: SK_MuscomorphWingRightB
+    4300000: SK_Muscomorph
+    4300002: SK_MuscomorphWingLeftA
+    4300004: SK_MuscomorphHorns
+    4300006: SK_MuscomorphTail
+    4300008: SK_MuscomorphWingRighA
+    4300010: SK_MuscomorphWingLeftB
+    4300012: SK_MuscomorphWingRightB
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: SK_Muscomorph
+    13700002: SK_MuscomorphHorns
+    13700004: SK_MuscomorphTail
+    13700006: SK_MuscomorphWingLeftA
+    13700008: SK_MuscomorphWingLeftB
+    13700010: SK_MuscomorphWingRighA
+    13700012: SK_MuscomorphWingRightB
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: root
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 112037
+  packageName: 'MONSTER: MUSCOMORPH'
+  packageVersion: 1.0
+  assetPath: Assets/Monsters Pack Volume 2/Muscomorph/FBX Files/Muscomorph.FBX
+  uploadId: 231136

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e0fe3ffbc90c3c242a8117ad4c924eba
+timeCreated: 1519172339
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 112037
+  packageName: 'MONSTER: MUSCOMORPH'
+  packageVersion: 1.0
+  assetPath: Assets/Monsters Pack Volume 2/Muscomorph/Muscomorph Controller.controller
+  uploadId: 231136
