@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SKM_Skeleton_Guard_Body
       objectReference: {fileID: 0}
+    - target: {fileID: 2994584342260894859, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4740857772098043196, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       propertyPath: m_Controller
       value: 
