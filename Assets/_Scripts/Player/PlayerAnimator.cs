@@ -11,12 +11,6 @@ public class PlayerAnimator : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void OnMovement(float horizontal, float vertical)
-    {
-        animator.SetFloat("horizontal", horizontal);
-        animator.SetFloat("vertical", vertical);
-    }
-
     public void OnJump()
     {
         animator.SetTrigger("onJump");
@@ -37,6 +31,7 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetTrigger("onWeaponAttack");
     }
 
+    // 애니메이션이 재생되는 도중 특정 프레임에서 호출 하도록 설정
     public void OnAttackCollision()
     {
         attackCollision.SetActive(true);

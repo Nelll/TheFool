@@ -1,10 +1,11 @@
+using System.Collections;
 using System.Runtime.InteropServices;
 using TreeEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Transform cameraTransform; // 카메라 Transform
+    [SerializeField] private Transform cameraTransform; // 카메라 Transform, 이동 방향 계산에 사용
     private PlayerMovement playerMovement;
     private PlayerAnimator playerAnimator;
 
@@ -38,8 +39,8 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = cameraForward * z + cameraRight * x;
 
         // 이동 여부, 달리기 상태 체크
-        bool isWalking = direction.magnitude > 0;
-        bool isRunning = Input.GetKey(KeyCode.LeftShift) && isWalking;
+        bool isWalking = direction.magnitude > 0;                       // 입력 벡터의 크기가 0보타 크면 이동
+        bool isRunning = Input.GetKey(KeyCode.LeftShift) && isWalking;  // 
 
         // 이동 처리
         if (isWalking)
@@ -52,17 +53,18 @@ public class PlayerController : MonoBehaviour
         }
 
         // 애니메이터 상태 업데이트
-        playerAnimator.OnWalk(isWalking && !isRunning);
-        playerAnimator.OnRun(isRunning);
+        playerAnimator.OnWalk(isWalking && !isRunning);     // 걷는중, 달리기 상태 아닐경우 OnWalk
+        playerAnimator.OnRun(isRunning);                    // 달리는 중 OnRun
 
         if (Input.GetKey(KeyCode.Space))
         {
-            playerAnimator.OnJump();
-            playerMovement.Jump(); // 점프 함수 호출
+            playerAnimator.OnJump();    // 애니메이션 파라미터 설정(onJump)
+            playerMovement.Jump();      // 점프 함수 호출
         }
 
         if (Input.GetMouseButton(0))
         {
+            Debug.Log("클릭 완료");
             playerAnimator.OnWeaponAttack();
         }
     }
