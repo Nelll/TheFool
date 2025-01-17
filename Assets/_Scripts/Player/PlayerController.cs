@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Runtime.InteropServices;
 using TreeEditor;
@@ -20,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // 구르기 상태를 확인하여 다른 입력을 제한
+        if (playerMovement.IsRolling) return;
+
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         // 이동 여부, 달리기 상태 체크
         bool isWalking = direction.magnitude > 0;                       // 입력 벡터의 크기가 0보타 크면 이동
-        bool isRunning = Input.GetKey(KeyCode.LeftShift) && isWalking;  // 
+        bool isRunning = Input.GetKey(KeyCode.LeftShift) && isWalking;
 
         // 이동 처리
         if (isWalking)
@@ -56,16 +60,24 @@ public class PlayerController : MonoBehaviour
         playerAnimator.OnWalk(isWalking && !isRunning);     // 걷는중, 달리기 상태 아닐경우 OnWalk
         playerAnimator.OnRun(isRunning);                    // 달리는 중 OnRun
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && playerMovement.IsGrounded())
         {
+            //playerMovement.Jump();      // 점프 함수 호출
             playerAnimator.OnJump();    // 애니메이션 파라미터 설정(onJump)
-            playerMovement.Jump();      // 점프 함수 호출
+            Debug.Log("점프 1회 실행");
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("클릭 완료");
             playerAnimator.OnWeaponAttack();
         }
+
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            playerAnimator.OnRoll();
+            playerMovement.Roll();
+        }
     }
+
 }

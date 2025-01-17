@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
@@ -16,6 +17,11 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetTrigger("onJump");
     }
 
+    public void OnRoll()
+    {
+        animator.SetTrigger("onRoll");
+    }
+
     public void OnWalk(bool isWalking)
     {
         animator.SetBool("isWalk", isWalking);
@@ -25,6 +31,11 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator.SetBool("isRun", isRunning);
     }
+
+    //public void OnHit()
+    //{
+    //    animator.SetBool("isHit", isHitting);
+    //}
 
     public void OnWeaponAttack()
     {
