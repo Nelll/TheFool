@@ -11,11 +11,19 @@ public class BossBehaviorAI : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;      // 이동 속도 
     [SerializeField] private float rotationSpeed = 10;  // 회전 속도
 
+    [SerializeField] private GameObject[] breatheParticles;
+    [SerializeField] private GameObject[] breatheLights;
+
     enum State
     {
+        Sleep,
         Idle,
         Move,
         Attack,
+        Jump,
+        Fly,
+        FlyAttack,
+        Dive,
         Die
     }
 
@@ -26,7 +34,7 @@ public class BossBehaviorAI : MonoBehaviour
     Transform detectedPlayer;
     Animator animator;
     NavMeshAgent agent;
-    bool isWake;
+    bool isWake = false;
 
     private void Start()
     {
@@ -34,7 +42,7 @@ public class BossBehaviorAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         originPosition = transform.position;
-        state = State.Idle;
+        StartSleep();
 
         btRunner = new BehaviorTreeRunner(SettingAttackBT()); // RootNode 세팅
     }
@@ -88,7 +96,16 @@ public class BossBehaviorAI : MonoBehaviour
     {
         // 공격 중인지 체크?
         // 보스가 가진 공격 애니메이션은 전부 추가할 필요가 있는 듯하다.
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
+        //if(state == State.Attack || state == State.FlyAttack)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack01"))
+        {
+            return NodeState.Running;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack02"))
+        {
+            return NodeState.Running;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("BreatheFire"))
         {
             return NodeState.Running;
         }
@@ -113,8 +130,20 @@ public class BossBehaviorAI : MonoBehaviour
     {
         if (detectedPlayer != null)
         {
-            // 랜덤 공격을 추가하면 될 듯 하다
-            StartAttack01();
+            if(isWake == true)
+            {
+                // 랜덤 공격을 추가하면 될 듯 하다
+                //Debug.Log(Vector3.Distance(detectedPlayer.position, transform.position));
+                //if(Vector3.Distance(detectedPlayer.position, transform.position) < 3.5f)
+                //{
+                //    StartAttack02();
+                //}
+                //else
+                //{
+                //    StartAttack01();
+                //}
+                StartBreathe();
+            }
             return NodeState.Success;
         }
         return NodeState.Failure;
@@ -130,10 +159,10 @@ public class BossBehaviorAI : MonoBehaviour
         {
             detectedPlayer = overlaps[0].transform;
 
-            //if(isWake == false)
-            //{
-            //    StartWakeUp();
-            //}
+            if (isWake == false)
+            {
+                StartWakeUp();
+            }
 
             return NodeState.Success;
         }
@@ -150,7 +179,10 @@ public class BossBehaviorAI : MonoBehaviour
             {
                 return NodeState.Success;
             }
-            StartMove(detectedPlayer.position);
+            if(isWake == true)
+            {
+                StartMove(detectedPlayer.position);
+            }
             return NodeState.Running;
         }
         return NodeState.Failure;
@@ -160,7 +192,10 @@ public class BossBehaviorAI : MonoBehaviour
     {
         if (Vector3.Distance(originPosition, transform.position) < 0.1)
         {
-            StartIdle();
+            if(isWake == true)
+            {
+                StartIdle();
+            }
             return NodeState.Success;
         }
         else
@@ -170,22 +205,30 @@ public class BossBehaviorAI : MonoBehaviour
         }
     }
 
+    void StartSleep()
+    {
+        state = State.Sleep;
+        animator.SetTrigger("Sleep");
+    }
+
     void StartWakeUp()
     {
-        isWake = true;
         StartCoroutine(BossWakeUp());
     }
 
     IEnumerator BossWakeUp()
     {
+        yield return null;
         animator.SetTrigger("Reassemble");
-        yield return new WaitForSeconds(1);
+
+        yield return new WaitForSeconds(4.3f);
+        isWake = true;
+
     }
 
     void StartIdle()
     {
         state = State.Idle;
-        //agent.isStopped = true;
         animator.SetTrigger("Idle");
     }
 
@@ -199,20 +242,97 @@ public class BossBehaviorAI : MonoBehaviour
             transform.rotation =
                 Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
-        if (Vector3.Distance(originPosition, transform.position) < 0.1)
+        animator.SetTrigger("Walk");
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
         {
-            transform.Rotate(new Vector3(0, 0, 0));
+            transform.position = Vector3.MoveTowards(transform.position, position, moveSpeed * Time.deltaTime);
         }
-        transform.position = Vector3.MoveTowards(transform.position, position, moveSpeed * Time.deltaTime);
-        //agent.destination = position;
-        //agent.isStopped = false;
-        //animator.SetTrigger("Run");
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+        {
+            transform.position = Vector3.MoveTowards(transform.position, position, (moveSpeed + 3) * Time.deltaTime);
+        }
     }
 
     void StartAttack01()
     {
         state = State.Attack;
-        //agent.isStopped = false;
         animator.SetTrigger("Attack01");
+    }
+
+    void StartAttack02()
+    {
+        state = State.Attack;
+        animator.SetTrigger("Attack02");
+    }
+
+    void StartTailAttack()
+    {
+        state = State.Attack;
+        animator.SetTrigger("TailWhipL");
+    }
+
+    void StartBreathe()
+    {
+        state = State.Attack;
+        animator.SetTrigger("BreatheFire");
+        Invoke("StartBreatheParticle", 0.3f);
+        Invoke("StopBreatheParticle", 2.5f);
+    }
+
+    void StartJump()
+    {
+        state = State.Jump;
+        animator.SetTrigger("Jump");
+    }
+
+    void StartFly()
+    {
+        state = State.Fly;
+        animator.SetTrigger("FlyIdle");
+    }
+
+    void StartFlyAttack()
+    {
+        state = State.FlyAttack;
+        animator.SetTrigger("FlyAttack");
+    }
+
+    void StartFlyBreathe()
+    {
+        state = State.FlyAttack;
+        animator.SetTrigger("FlyBreatheFire");
+        Invoke("StartBreatheParticle", 0.3f);
+        Invoke("StopBreatheParticle", 2.5f);
+    }
+
+    void StartDive()
+    {
+        state = State.Dive;
+        animator.SetTrigger("FlyDive");
+    }
+
+    // Dragon Breathe
+    public void StartBreatheParticle()
+    {
+        for(int l =0; l< breatheLights.Length; l++)
+        {
+            breatheLights[l].SetActive(true);
+        }
+        for(int p = 0; p < breatheParticles.Length; p++)
+        {
+            breatheParticles[p].GetComponent<ParticleSystem>().Play();
+        }
+    }
+
+    public void StopBreatheParticle()
+    {
+        for (int l = 0; l < breatheLights.Length; l++)
+        {
+            breatheLights[l].SetActive(false);
+        }
+        for (int p = 0; p < breatheParticles.Length; p++)
+        {
+            breatheParticles[p].GetComponent<ParticleSystem>().Stop();
+        }
     }
 }

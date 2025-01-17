@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - CinemachineTarget
+  - HitBox
   layers:
   - Default
   - TransparentFX
