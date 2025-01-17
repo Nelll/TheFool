@@ -239,6 +239,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1561903662643562041}
+    - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 53433639159635758}
+    - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9076712424922112931}
   m_SourcePrefab: {fileID: 100100000, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
 --- !u!4 &260828890218810376 stripped
 Transform:
@@ -260,8 +266,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 0.2
+  m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -272,3 +278,43 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &53433639159635758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636545570920896178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73770da812ed5f94ebbe4f9442178a3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterState: 0
+  target: {fileID: 0}
+  distanceToPlayer: 0
+  chaseRange: 0
+  attackRange: 0
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &9076712424922112931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636545570920896178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71064a8688ef95d4b8bb9a732132bb5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redRange: 2
+  orangeRange: 0
+  yellowRange: 0
+  greenRange: 7
+  blueRange: 0
+  whiteRange: 0
