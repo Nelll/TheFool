@@ -32,14 +32,14 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetBool("isRun", isRunning);
     }
 
-    //public void OnHit()
-    //{
-    //    animator.SetBool("isHit", isHitting);
-    //}
-
     public void OnWeaponAttack()
     {
         animator.SetTrigger("onWeaponAttack");
+    }
+
+    public void OnUltimateAttack()
+    {
+        animator.SetTrigger("onUltimateAttack");
     }
 
     // 애니메이션이 재생되는 도중 특정 프레임에서 호출 하도록 설정

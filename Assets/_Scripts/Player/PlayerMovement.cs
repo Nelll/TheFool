@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.y += gravity * Time.deltaTime;
         }
 
-        if(!isRolling)
+        if (!isRolling)
         {
             // 현재 이동 속도: 달리기 상태라면 runSpeed, 그렇지 않으면 moveSpeed 사용 (달리기 상태에 따라 속도 변경)
             float currentSpeed = isRunning ? runSpeed : moveSpeed;
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     // 외부에서 호출해서 매개변수의 방향정보를 가져오면, 방향 정보를 moveDirection에 저장
     public void Move(Vector3 direction)
     {
-        if(!isRolling)
+        if (!isRolling)
         {
             // 입력받은 방향을 moveDirection에 저장
             moveDirection = new Vector3(direction.x, moveDirection.y, direction.z);
@@ -58,14 +58,14 @@ public class PlayerMovement : MonoBehaviour
         return characterController.isGrounded;
     }
 
-    public void Jump()
-    {
-        if (characterController.isGrounded)
-        {
-            moveDirection.y = jumpPower;
-            StartCoroutine(DisableGravityForMoment());
-        }
-    }
+    //public void Jump()
+    //{
+    //    if (characterController.isGrounded)
+    //    {
+    //        moveDirection.y = jumpPower;
+    //        StartCoroutine(DisableGravityForMoment());
+    //    }
+    //}
 
     private IEnumerator DisableGravityForMoment()
     {
@@ -108,3 +108,4 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsRolling => isRolling; // 구르기 상태를 외부에서 확인
 }
+

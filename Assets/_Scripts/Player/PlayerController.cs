@@ -7,6 +7,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform; // 카메라 Transform, 이동 방향 계산에 사용
+
+    public TrailRenderer trailEffect;
+
     private PlayerMovement playerMovement;
     private PlayerAnimator playerAnimator;
 
@@ -31,13 +34,13 @@ public class PlayerController : MonoBehaviour
         Vector3 cameraForward = cameraTransform.forward;
         Vector3 cameraRight = cameraTransform.right;
 
-        // y축 이동 방지 (카메라의 수직 방향 제거)
-        cameraForward.y = 0;
-        cameraRight.y = 0;
-
         // 정규화하여 방향 벡터 계산
         cameraForward.Normalize();
         cameraRight.Normalize();
+
+        // y축 이동 방지 (카메라의 수직 방향 제거)
+        cameraForward.y = 0;
+        cameraRight.y = 0;
 
         // 입력에 따라 이동 방향 결정
         Vector3 direction = cameraForward * z + cameraRight * x;
@@ -60,24 +63,41 @@ public class PlayerController : MonoBehaviour
         playerAnimator.OnWalk(isWalking && !isRunning);     // 걷는중, 달리기 상태 아닐경우 OnWalk
         playerAnimator.OnRun(isRunning);                    // 달리는 중 OnRun
 
-        if (Input.GetKeyDown(KeyCode.Space) && playerMovement.IsGrounded())
-        {
-            //playerMovement.Jump();      // 점프 함수 호출
-            playerAnimator.OnJump();    // 애니메이션 파라미터 설정(onJump)
-            Debug.Log("점프 1회 실행");
-        }
-
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("클릭 완료");
+            Debug.Log("공격 클릭 완료");
             playerAnimator.OnWeaponAttack();
+            trailEffect.enabled = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("궁극기");
+            playerAnimator.OnUltimateAttack();
+            trailEffect.enabled = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             playerAnimator.OnRoll();
             playerMovement.Roll();
         }
     }
 
+    public void EnableTrail()
+    {
+        trailEffect.enabled = true;
+    }
+
+    public void DisableTrail()
+    {
+        trailEffect.enabled = false;
+    }
+
+    public void PlayFootstepSound() => PlayerSoundManager.Instance.PlayFootstepSound();
+    public void PlayAttackSound1() => PlayerSoundManager.Instance.PlayAttackSound1();
+    public void PlayAttackSound2() => PlayerSoundManager.Instance.PlayAttackSound2();
+    public void PlayAttackSound3() => PlayerSoundManager.Instance.PlayAttackSound3();
+    public void PlayAttackSound4() => PlayerSoundManager.Instance.PlayAttackSound4();
+    public void PlayRollSound() => PlayerSoundManager.Instance.PlayRollSound();
 }

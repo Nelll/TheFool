@@ -73,12 +73,12 @@ public class CameraController : MonoBehaviour
 
         if (Physics.Linecast(transform.position, desiredCameraPos, out hit, collisionLayers))
         {
-            Debug.Log("面倒");
+            //Debug.Log("面倒");
             finalDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
         }
         else
         {
-            Debug.Log("面倒X");
+            //Debug.Log("面倒X");
             finalDistance = maxDistance;
         }
 
@@ -97,7 +97,7 @@ public class CameraController : MonoBehaviour
         {
             CursorLock(false);
         }
-        else if (Input.GetMouseButtonDown(0) && Cursor.lockState != CursorLockMode.Locked)
+        else if (Input.GetMouseButtonDown(1) && Cursor.lockState != CursorLockMode.Locked)
         {
             CursorLock(true);
         }
