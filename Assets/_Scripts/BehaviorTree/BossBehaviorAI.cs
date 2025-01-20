@@ -4,6 +4,8 @@ using System.ComponentModel.Design.Serialization;
 using UnityEngine.AI;
 using System.Collections;
 using UnityEngine.UIElements;
+using InfinityPBR;
+using TMPro;
 public class BossBehaviorAI : MonoBehaviour
 {
     [SerializeField] private float detectRange = 10f;   // 탐지 범위
@@ -11,35 +13,31 @@ public class BossBehaviorAI : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;      // 이동 속도 
     [SerializeField] private float rotationSpeed = 10;  // 회전 속도
 
-    [SerializeField] private GameObject[] breatheParticles;
-    [SerializeField] private GameObject[] breatheLights;
+    [SerializeField] private GameObject[] breatheParticles; // 브레스 파티클
+    [SerializeField] private GameObject[] breatheProp;      // 브레스 파티클 제외 기타 요소
+    [SerializeField] private GameObject[] HitDamageBoxes;   // 데미지 받는 콜라이더
 
-    enum State
-    {
-        Sleep,
-        Idle,
-        Move,
-        Attack,
-        Jump,
-        Fly,
-        FlyAttack,
-        Dive,
-        Die
-    }
-
-    State state;
     Vector3 originPosition;
-    Vector3 currentPosition;
     BehaviorTreeRunner btRunner;
     Transform detectedPlayer;
     Animator animator;
-    NavMeshAgent agent;
+    Health health;
+
     bool isWake = false;
+    int damage;
+    int rand;
+
+    public int Damage // 외부에 데미지 값 공유
+    { 
+        get { return damage; }
+        set { damage = value; }
+    }
+
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
+        health = GetComponent<Health>();
 
         originPosition = transform.position;
         StartSleep();
@@ -50,6 +48,15 @@ public class BossBehaviorAI : MonoBehaviour
     private void Update()
     {
         btRunner.Operate(); // Behavior Tree 반복
+        rand = Random.Range(1, 10);
+
+        if (detectedPlayer != null)
+        {
+            if (Vector3.Magnitude(detectedPlayer.position - transform.position) < attackRange)
+            {
+                LookAtDetected(detectedPlayer.position, 5);
+            }
+        }
     }
 
     // RootNode
@@ -105,7 +112,19 @@ public class BossBehaviorAI : MonoBehaviour
         {
             return NodeState.Running;
         }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("TailWhipL"))
+        {
+            return NodeState.Running;
+        }
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("BreatheFire"))
+        {
+            return NodeState.Running;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Breathe Fire Set"))
+        {
+            return NodeState.Running;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Fly Attack Set"))
         {
             return NodeState.Running;
         }
@@ -132,17 +151,20 @@ public class BossBehaviorAI : MonoBehaviour
         {
             if(isWake == true)
             {
-                // 랜덤 공격을 추가하면 될 듯 하다
-                //Debug.Log(Vector3.Distance(detectedPlayer.position, transform.position));
-                //if(Vector3.Distance(detectedPlayer.position, transform.position) < 3.5f)
-                //{
-                //    StartAttack02();
-                //}
-                //else
-                //{
-                //    StartAttack01();
-                //}
-                StartBreathe();
+                Debug.Log(rand);
+                // 랜덤 공격 페이즈
+                if (health.currentHealth >= health.maxHealth * 0.6)
+                {
+                    FirstPhase();
+                }
+                if (health.currentHealth <= health.maxHealth * 0.6 && health.currentHealth > health.maxHealth * 0.3) // 최대 체력의 60퍼센트 이하일 때
+                {
+                    SecondPhase();
+                }
+                if (health.currentHealth <= health.maxHealth * 0.3) // 최대 체력의 30퍼센트 이하일 때
+                {
+                    FinalPhase();
+                }
             }
             return NodeState.Success;
         }
@@ -205,9 +227,91 @@ public class BossBehaviorAI : MonoBehaviour
         }
     }
 
+
+    void FirstPhase()
+    {
+        if (rand <= 2) // 20퍼센트 확률로 쉬기
+        {
+            StartIdle();
+        }
+        else if (rand <= 4) // 20퍼센트 확률로 발톱 공격
+        {
+            if (Vector3.Distance(detectedPlayer.position, transform.position) < 4f)
+            {
+                StartAttack02();
+            }
+        }
+        else if (rand <= 6) // 20퍼센트 확률로 물기
+        {
+            StartAttack01();
+        }
+        else if (rand <= 8) // 20퍼센트 확률로 꼬리치기
+        {
+            StartTailAttack();
+        }
+        else if (rand <= 10) // 20퍼센트 확률 브레스
+        {
+            StartBreathe();
+        }
+    }
+
+    void SecondPhase()
+    {
+        if (rand <= 1) // 10퍼센트 확률로 쉬기
+        {
+            StartIdle();
+        }
+        else if (rand <= 2) // 10퍼센트 확률로 발톱 공격
+        {
+            if (Vector3.Distance(detectedPlayer.position, transform.position) < 4f)
+            {
+                StartAttack02();
+            }
+        }
+        else if (rand <= 3) // 10퍼센트 확률로 물기
+        {
+            StartAttack01();
+        }
+        else if (rand <= 4)   // 10퍼센트 확률로 꼬리치기
+        {
+            StartTailAttack();
+        }
+        else if (rand <= 6)   // 20퍼센트 확률로 지상 브레스
+        {
+            StartBreathe();
+        }
+        else if (rand <= 8)   // 20퍼센트 확률로 지면 강타
+        {
+            StartFlyAttack();
+        }
+        else if (rand <= 10)  // 20퍼센트 확률로 공중 브레스
+        {
+            StartFlyBreathe();
+        }
+    }
+
+    void FinalPhase()
+    {
+        if (rand <= 2)   // 20퍼센트 확률로 꼬리치기
+        {
+            StartTailAttack();
+        }
+        else if (rand <= 5)   // 30퍼센트 확률로 지상 브레스
+        {
+            StartBreathe();
+        }
+        else if (rand <= 8)   // 30퍼센트 확률로 지면 강타
+        {
+            StartFlyAttack();
+        }
+        else if (rand <= 10)  // 20퍼센트 확률로 공중 브레스
+        {
+            StartFlyBreathe();
+        }
+    }
+
     void StartSleep()
     {
-        state = State.Sleep;
         animator.SetTrigger("Sleep");
     }
 
@@ -228,20 +332,12 @@ public class BossBehaviorAI : MonoBehaviour
 
     void StartIdle()
     {
-        state = State.Idle;
         animator.SetTrigger("Idle");
     }
 
     void StartMove(Vector3 position)
     {
-        state = State.Move;
-        Vector3 direction = position - transform.position;
-        if(direction.magnitude > moveSpeed *Time.deltaTime)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation =
-                Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
+        LookAtDetected(position, rotationSpeed);
         animator.SetTrigger("Walk");
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))
         {
@@ -253,70 +349,59 @@ public class BossBehaviorAI : MonoBehaviour
         }
     }
 
+    void LookAtDetected(Vector3 position, float speed)
+    {
+        Vector3 direction = position - transform.position;
+        if (direction.magnitude > moveSpeed * Time.deltaTime)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation =
+                Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+        }
+    }
+
     void StartAttack01()
     {
-        state = State.Attack;
+        damage = 5;
         animator.SetTrigger("Attack01");
     }
 
     void StartAttack02()
     {
-        state = State.Attack;
+        damage = 5;
         animator.SetTrigger("Attack02");
     }
 
     void StartTailAttack()
     {
-        state = State.Attack;
+        damage = 10;
         animator.SetTrigger("TailWhipL");
     }
 
     void StartBreathe()
     {
-        state = State.Attack;
+        damage = 15;
         animator.SetTrigger("BreatheFire");
-        Invoke("StartBreatheParticle", 0.3f);
-        Invoke("StopBreatheParticle", 2.5f);
-    }
-
-    void StartJump()
-    {
-        state = State.Jump;
-        animator.SetTrigger("Jump");
-    }
-
-    void StartFly()
-    {
-        state = State.Fly;
-        animator.SetTrigger("FlyIdle");
     }
 
     void StartFlyAttack()
     {
-        state = State.FlyAttack;
-        animator.SetTrigger("FlyAttack");
+        damage = 15;
+        animator.SetTrigger("FlyAttackSet");
     }
 
     void StartFlyBreathe()
     {
-        state = State.FlyAttack;
-        animator.SetTrigger("FlyBreatheFire");
-        Invoke("StartBreatheParticle", 0.3f);
-        Invoke("StopBreatheParticle", 2.5f);
-    }
-
-    void StartDive()
-    {
-        state = State.Dive;
-        animator.SetTrigger("FlyDive");
+        damage = 20;
+        animator.SetTrigger("FlyBreatheFireSet");
     }
 
     // Dragon Breathe
     public void StartBreatheParticle()
     {
-        for(int l =0; l< breatheLights.Length; l++)
+        for(int l =0; l< breatheProp.Length; l++)
         {
-            breatheLights[l].SetActive(true);
+            breatheProp[l].SetActive(true);
         }
         for(int p = 0; p < breatheParticles.Length; p++)
         {
@@ -326,13 +411,33 @@ public class BossBehaviorAI : MonoBehaviour
 
     public void StopBreatheParticle()
     {
-        for (int l = 0; l < breatheLights.Length; l++)
+        for (int l = 0; l < breatheProp.Length; l++)
         {
-            breatheLights[l].SetActive(false);
+            breatheProp[l].SetActive(false);
         }
         for (int p = 0; p < breatheParticles.Length; p++)
         {
             breatheParticles[p].GetComponent<ParticleSystem>().Stop();
+        }
+    }
+
+    // HitBox 활성화
+    public void StartHitDamageBoxActive()
+    {
+        // HitBox 전체 활성화
+        for (int i = 0; i < HitDamageBoxes.Length; i++)
+        {
+            HitDamageBoxes[i].SetActive(true);
+        }
+
+    }
+
+    // HitBox 비활성화
+    public void StopHitDamageBoxActive()
+    {
+        for(int i = 0; i < HitDamageBoxes.Length; i++)
+        {
+            HitDamageBoxes[i].SetActive(false);
         }
     }
 }

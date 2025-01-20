@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatDisplayer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] Health health;
+    [SerializeField] Image healthBarImage;
+
+
+    private void Start()
     {
-        
+        healthBarImage.fillAmount = health.currentHealth / health.maxHealth;
+    }
+    private void Update()
+    {
+        healthBarImage.fillAmount = health.currentHealth / health.maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

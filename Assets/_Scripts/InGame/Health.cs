@@ -3,21 +3,34 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
+    public float invincibilityTime = 2f;
     public int maxHealth;
     public int currentHealth;
 
     public bool isDead;
-
+    public bool isInvincibilityTime = false;
+    float count = 0;
     public Action<Health> OnDie;
 
-    Status status;
+    public Status status;
     
     private void Awake()
     {
-        status = GetComponent<Status>();
         maxHealth = status.Health;
         currentHealth = maxHealth;
+    }
+
+    private void Update()
+    {
+        if (isInvincibilityTime == true)
+        {
+            count += Time.deltaTime;
+            if(count >= invincibilityTime)
+            {
+                isInvincibilityTime = false;
+                count = 0;
+            }
+        }
     }
 
     public void TakeDamage(int damage)
