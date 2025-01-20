@@ -68,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9111127960649890564
 Transform:
   m_ObjectHideFlags: 0
@@ -230,7 +230,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2443372821909632835, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 8281459151589961023, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 586224440276456463, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 661173861795521358, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 4401295651008208487, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 74526833029917351, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 6449686751299323033, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 4256575286280280701, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 1034542331880902048, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 7273189776648147363, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 5226746535703126007, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 553368521231928416, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 7799001052989643318, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 8696831176560719192, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 1267057108722262683, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 1368920087675754240, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 5281827935643255570, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 288248460339455625, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 5165574869959812487, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+    - {fileID: 8923521392774268040, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1669364117794744134, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       insertIndex: -1
@@ -315,6 +335,6 @@ MonoBehaviour:
   redRange: 2
   orangeRange: 0
   yellowRange: 0
-  greenRange: 7
+  greenRange: 5
   blueRange: 0
   whiteRange: 0
