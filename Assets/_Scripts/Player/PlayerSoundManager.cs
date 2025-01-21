@@ -9,6 +9,7 @@ public class PlayerSoundManager : MonoBehaviour
 
     [Header("Audio Clips")]
     public AudioClip footstepSound;
+    public AudioClip runstepSound;
     public AudioClip rollSound;
     public AudioClip attackSound1;
     public AudioClip attackSound2;
@@ -40,11 +41,10 @@ public class PlayerSoundManager : MonoBehaviour
     }
 
     public void PlayFootstepSound() => PlaySound(footstepSound);
+    public void PlayRunstepSound() => PlaySound(runstepSound);
     public void PlayRollSound() => PlaySound(rollSound);
-    //public void PlayDeathSound() => PlaySound(deathSound);
-    //public void PlayHitSound() => PlaySound(hitSound);
     public void PlayAttackSound1() => PlaySound(attackSound1,0.3f);
     public void PlayAttackSound2() => PlaySound(attackSound2, 0.3f);
     public void PlayAttackSound3() => PlaySound(attackSound3, 0.3f);
-    public void PlayAttackSound4() => PlaySound(attackSound4, 0.3f);
+    public void PlayAttackSound4() => PlaySound(attackSound4, 0.6f);
 }

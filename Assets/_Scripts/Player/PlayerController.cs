@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void PlayFootstepSound() => PlayerSoundManager.Instance.PlayFootstepSound();
+    public void PlayRunstepSound() => PlayerSoundManager.Instance.PlayRunstepSound();
     public void PlayAttackSound1() => PlayerSoundManager.Instance.PlayAttackSound1();
     public void PlayAttackSound2() => PlayerSoundManager.Instance.PlayAttackSound2();
     public void PlayAttackSound3() => PlayerSoundManager.Instance.PlayAttackSound3();

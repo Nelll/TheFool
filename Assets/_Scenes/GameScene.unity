@@ -759,12 +759,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 7733992897839848551}
-  footstepSound: {fileID: 8300000, guid: 780dbd5c05d6c5a45be2fbb82e680575, type: 3}
+  footstepSound: {fileID: 8300000, guid: e752d8ed7ebbee24ea5eda73f2566648, type: 3}
+  runstepSound: {fileID: 8300000, guid: 939f2d104435758449820bc8c05dd19c, type: 3}
   rollSound: {fileID: 8300000, guid: 30d92fb8d4a0bfe45959f759b48f4c85, type: 3}
   attackSound1: {fileID: 8300000, guid: 9f5e8464bb9c2dc4cad0392a182ba8b7, type: 3}
   attackSound2: {fileID: 8300000, guid: dc98c2d2e05d27f4281e302410fd755e, type: 3}
   attackSound3: {fileID: 8300000, guid: 26675a04bd81c154e8eb689f7eb9b957, type: 3}
-  attackSound4: {fileID: 8300000, guid: 2cf0c5ce4b12aeb479dd16b3098e6007, type: 3}
+  attackSound4: {fileID: 8300000, guid: ecd43020ed4bc794991f661c98182ac9, type: 3}
 --- !u!4 &1039446594
 Transform:
   m_ObjectHideFlags: 0
