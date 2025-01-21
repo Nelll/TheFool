@@ -6085,8 +6085,7 @@ Transform:
   m_LocalPosition: {x: -1.6198224, y: 0.23214428, z: 2.4207053}
   m_LocalScale: {x: 0.99999887, y: 1.0000057, z: 1.0000018}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6389633103663577853}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -7.9520082, y: 2.1312637, z: 28.671484}
 --- !u!1 &2299219495606826792
@@ -6289,7 +6288,7 @@ GameObject:
   - component: {fileID: 4292871662555430598}
   m_Layer: 8
   m_Name: Tail_Last
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6436,7 +6435,7 @@ GameObject:
   - component: {fileID: 3387208995800691352}
   m_Layer: 8
   m_Name: HitBox_Arm_L
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6708,7 +6707,7 @@ GameObject:
   - component: {fileID: 299890272428625077}
   m_Layer: 8
   m_Name: Tail01
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6761,7 +6760,7 @@ GameObject:
   - component: {fileID: 93114327635148575}
   m_Layer: 8
   m_Name: HitBox_Leg_L
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6830,8 +6829,7 @@ Transform:
   m_LocalPosition: {x: 1.3879672, y: 0.09902573, z: 2.4109879}
   m_LocalScale: {x: 1.0000017, y: 1.0000013, z: 1.0000023}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7582811714401469733}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -11.602795, y: -23.227062, z: -6.4201}
 --- !u!1 &3378695021184519007
@@ -7251,8 +7249,7 @@ Transform:
   m_LocalPosition: {x: -1.288616, y: -0.09547197, z: 2.3612306}
   m_LocalScale: {x: 0.99999934, y: 1.0000044, z: 1.0000033}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6550698445927231732}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -9.207764, y: 1.9523326, z: 28.065382}
 --- !u!1 &3581097529327504545
@@ -7363,7 +7360,7 @@ GameObject:
   - component: {fileID: 5409169270258560424}
   m_Layer: 8
   m_Name: HitBox_Arm_R
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7563,37 +7560,6 @@ Transform:
   - {fileID: 3658908143334841062}
   m_Father: {fileID: 6229667984500821071}
   m_LocalEulerAnglesHint: {x: -3.7407825, y: -7.99146, z: 26.145544}
---- !u!1 &3805234525130136803
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3257220670513012741}
-  m_Layer: 0
-  m_Name: Wing_L_Line02
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3257220670513012741
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805234525130136803}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7062681972012787194}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3909984728479005584
 GameObject:
   m_ObjectHideFlags: 0
@@ -7606,7 +7572,7 @@ GameObject:
   - component: {fileID: 6299261393917769455}
   m_Layer: 8
   m_Name: Hitbox_Head
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7832,68 +7798,6 @@ Transform:
   - {fileID: 42589696237978157}
   m_Father: {fileID: 973806758033430989}
   m_LocalEulerAnglesHint: {x: 0.0000027081508, y: -0.000014329777, z: -1.11284205e-14}
---- !u!1 &3991949468417500852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4510891148251039624}
-  m_Layer: 0
-  m_Name: Wing_R_Line01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4510891148251039624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3991949468417500852}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5204197591671319041}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4015508560654497073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9213396573420605342}
-  m_Layer: 0
-  m_Name: Wing_L_Line03
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9213396573420605342
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4015508560654497073}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4246709239474732213}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4026672533398974186
 GameObject:
   m_ObjectHideFlags: 0
@@ -8083,68 +7987,6 @@ Transform:
   - {fileID: 6983408438611520522}
   m_Father: {fileID: 6415798943890483674}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.0000056782}
---- !u!1 &4276739523014044873
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6550698445927231732}
-  m_Layer: 0
-  m_Name: Wing_L_Line01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6550698445927231732
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4276739523014044873}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7734398170786423719}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4336271722443830758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8572616310698807634}
-  m_Layer: 0
-  m_Name: Wing_R_Line02
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8572616310698807634
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4336271722443830758}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4258123324773674792}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4348532065892716799
 GameObject:
   m_ObjectHideFlags: 0
@@ -13454,7 +13296,7 @@ GameObject:
   - component: {fileID: 162962401840038028}
   m_Layer: 0
   m_Name: Bone Dragon
-  m_TagString: Enemy
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13542,18 +13384,7 @@ MonoBehaviour:
   - {fileID: 4619430205646370639}
   breatheProp:
   - {fileID: 1879643326341181754}
-  HitBoxes:
-  - {fileID: 3909984728479005584}
-  - {fileID: 7662270436018989091}
-  - {fileID: 3305074970966680983}
-  - {fileID: 9116668465117420055}
-  - {fileID: 3009513520420182656}
-  - {fileID: 3643122509442324335}
-  - {fileID: 2752887497504843055}
-  - {fileID: 3278579826994048110}
-  - {fileID: 5029626252787786840}
-  - {fileID: 6262508923663588637}
-  - {fileID: 6024274975694497413}
+  HitDamageBoxes: []
 --- !u!114 &162962401840038028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13663,8 +13494,7 @@ Transform:
   m_LocalPosition: {x: 1.5708439, y: 0.055634305, z: 2.3974445}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2454041053142260039}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -11.471035, y: -23.437805, z: -7.424509}
 --- !u!1 &5029626252787786840
@@ -13679,7 +13509,7 @@ GameObject:
   - component: {fileID: 1519304008286066623}
   m_Layer: 8
   m_Name: Tail02
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14338,8 +14168,7 @@ Transform:
   m_LocalPosition: {x: -1.4022855, y: 0.2839714, z: 2.4094472}
   m_LocalScale: {x: 1.0000017, y: 1.0000018, z: 1.0000023}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 9213396573420605342}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -8.338044, y: 1.3300296, z: 27.962122}
 --- !u!1 &5821423620784414876
@@ -14373,37 +14202,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -19.710402, y: 0.7920271, z: 4.0795627}
---- !u!1 &5833518712132467762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2454041053142260039}
-  m_Layer: 0
-  m_Name: Wing_R_Line04
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2454041053142260039
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5833518712132467762}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6824804169798980060}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5841922496482229609
 GameObject:
   m_ObjectHideFlags: 0
@@ -14466,37 +14264,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2932342226645603098}
   m_LocalEulerAnglesHint: {x: 51.58515, y: -177.5724, z: -128.14928}
---- !u!1 &5922560620393008488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6389633103663577853}
-  m_Layer: 0
-  m_Name: Wing_L_Line04
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6389633103663577853
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5922560620393008488}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2351469787951871536}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5958676508320957957
 GameObject:
   m_ObjectHideFlags: 0
@@ -14540,7 +14307,7 @@ GameObject:
   - component: {fileID: 7821964598063565055}
   m_Layer: 8
   m_Name: Tail04
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14609,8 +14376,7 @@ Transform:
   m_LocalPosition: {x: 1.1705312, y: -0.24954173, z: 2.3287964}
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4510891148251039624}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -12.924407, y: -23.823168, z: -4.4790325}
 --- !u!1 &6161572721843597711
@@ -14750,7 +14516,7 @@ GameObject:
   - component: {fileID: 4424620872853573760}
   m_Layer: 8
   m_Name: Tail03
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14850,8 +14616,7 @@ Transform:
   m_LocalPosition: {x: -1.2558548, y: 0.1841899, z: 2.3981986}
   m_LocalScale: {x: 1.0000019, y: 1.0000012, z: 1.0000017}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3257220670513012741}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -8.337494, y: 1.1708108, z: 27.854856}
 --- !u!1 &6362668686630901836
@@ -15754,8 +15519,7 @@ Transform:
   m_LocalPosition: {x: 1.2020967, y: 0.045100592, z: 2.378038}
   m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 0.99999994}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8572616310698807634}
+  m_Children: []
   m_Father: {fileID: 658102424907653989}
   m_LocalEulerAnglesHint: {x: -11.802499, y: -22.841822, z: -5.4833975}
 --- !u!1 &7303773826135508366
@@ -16120,7 +15884,7 @@ GameObject:
   - component: {fileID: 7586023597319161031}
   m_Layer: 8
   m_Name: HitBox_Body
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21052,37 +20816,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &7722065289588704607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7582811714401469733}
-  m_Layer: 0
-  m_Name: Wing_R_Line03
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7582811714401469733
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7722065289588704607}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5207600418434294143}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8032741040553802757
 GameObject:
   m_ObjectHideFlags: 0
@@ -21809,7 +21542,7 @@ GameObject:
   - component: {fileID: 7782567267392208023}
   m_Layer: 8
   m_Name: HitBox_Leg_R
-  m_TagString: MonsterDamage
+  m_TagString: BossMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

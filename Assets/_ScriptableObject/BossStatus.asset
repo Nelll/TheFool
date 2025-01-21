@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4783000031339443589, guid: 41651999ce018214388da3475bcc2d56, type: 3}
   name: BoneDragon
-  health: 100
+  health: 2000
   mentalPoint: 0
-  attack: 10
+  attack: 60
   defense: 0

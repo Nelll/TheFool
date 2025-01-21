@@ -3014,7 +3014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2224f1353648ff14dbedc02225b4db10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1456199253}
+  health: {fileID: 7733992897839848562}
   healthBarImage: {fileID: 1141094762}
 --- !u!1001 &1750094012
 PrefabInstance:
@@ -12195,6 +12195,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 0}
+--- !u!114 &7733992897839848562 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4155045106380090796, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
+  m_PrefabInstance: {fileID: 466629428667372040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979909415908560535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b367fdfca9da54c8c7a77da799329a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

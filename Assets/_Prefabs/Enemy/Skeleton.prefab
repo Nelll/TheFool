@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 9111127960649890564}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +140,10 @@ PrefabInstance:
     - target: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       propertyPath: m_Name
       value: SKM_Skeleton_Guard_Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      propertyPath: m_TagString
+      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 3847451925130010539, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -265,6 +269,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9076712424922112931}
+    - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6540533535775468661}
+    - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1696530237796402612}
+    - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 964859535968392914}
   m_SourcePrefab: {fileID: 100100000, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
 --- !u!4 &260828890218810376 stripped
 Transform:
@@ -338,3 +351,47 @@ MonoBehaviour:
   greenRange: 5
   blueRange: 0
   whiteRange: 0
+--- !u!114 &6540533535775468661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636545570920896178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b367fdfca9da54c8c7a77da799329a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibilityTime: 2
+  maxHealth: 0
+  currentHealth: 0
+  isDead: 0
+  isInvincibilityTime: 0
+  status: {fileID: 0}
+--- !u!114 &1696530237796402612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636545570920896178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0146bdd5ea1ce409d570893ab46e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 636545570920896178}
+--- !u!114 &964859535968392914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 636545570920896178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd20f5226c641b344a211da891b92794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  status: {fileID: 11400000, guid: 206c6df1349396745a7c44e354ac1ab1, type: 2}

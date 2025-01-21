@@ -151,7 +151,6 @@ public class BossBehaviorAI : MonoBehaviour
         {
             if(isWake == true)
             {
-                Debug.Log(rand);
                 // 랜덤 공격 페이즈
                 if (health.currentHealth >= health.maxHealth * 0.6)
                 {

@@ -9,7 +9,8 @@ TagManager:
   - HitBox
   - Breathe
   - MonsterDamage
-  - DamageBox
+  - Monster
+  - BossMonster
   layers:
   - Default
   - TransparentFX

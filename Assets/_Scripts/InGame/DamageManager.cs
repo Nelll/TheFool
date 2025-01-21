@@ -1,7 +1,6 @@
-using Mono.Cecil;
 using UnityEngine;
 
-public class DamageManagerTest : MonoBehaviour
+public class DamageManager : MonoBehaviour
 {
     public Status status;
 
