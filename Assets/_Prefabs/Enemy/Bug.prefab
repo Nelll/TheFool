@@ -548,14 +548,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterState: 0
   target: {fileID: 0}
-  distanceToPlayer: 0
-  chaseRange: 0
-  attackRange: 0
-  waypoints: []
-  moveRadius: 0
+  chaseRange: 3
+  attackRange: 1
+  moveRadius: 4
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 64
+  distanceToPlayer: 0
 --- !u!114 &4700539313345675606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,12 +567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71064a8688ef95d4b8bb9a732132bb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redRange: 1
-  orangeRange: 0
-  yellowRange: 3
-  greenRange: 2.5
-  blueRange: 0
-  whiteRange: 0
 --- !u!114 &7362429928558601806
 MonoBehaviour:
   m_ObjectHideFlags: 0

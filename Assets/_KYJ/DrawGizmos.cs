@@ -2,31 +2,26 @@ using UnityEngine;
 
 public class DrawGizmos : MonoBehaviour
 {
-    public float redRange;
-    public float orangeRange;
-    public float yellowRange;
-    public float greenRange;
-    public float blueRange;
-    public float whiteRange;
+    [Tooltip("공격 범위")] float attackRange;
+    [Tooltip("추적 범위")] float chaseRange;
+    [Tooltip("이동 반경")] float moveRadius;
+
+    void Start()
+    {
+        attackRange = GetComponent<MonsterBase>().AttackRange;
+        chaseRange = GetComponent<MonsterBase>().ChaseRange;
+        moveRadius = GetComponent<MonsterBase>().MoveRadius;
+    }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, redRange);
-
-        Gizmos.color = new Color(1f, 0.4f, 0f);
-        Gizmos.DrawWireSphere(transform.position, orangeRange);
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, yellowRange);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
 
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, greenRange);
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, blueRange);
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
 
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, whiteRange);
+        Gizmos.DrawWireSphere(transform.position, moveRadius);
     }
 }

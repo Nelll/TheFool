@@ -9,20 +9,19 @@ public abstract class MonsterBase : MonoBehaviour
     #region Variables
     public MonsterState monsterState;
     [SerializeField] protected Transform target;
-    [SerializeField] float distanceToPlayer;
     [SerializeField] protected float chaseRange;
     [SerializeField] protected float attackRange;
-
+    [SerializeField] protected float moveRadius;
+    [SerializeField] LayerMask obstaclesLayer; // 장애물로 인지할 레이어
+    [SerializeField] float distanceToPlayer;
+    [HideInInspector] public float ChaseRange { get { return chaseRange; } }
+    [HideInInspector] public float AttackRange { get { return attackRange; } }
+    [HideInInspector] public float MoveRadius { get { return moveRadius; } }
     protected NavMeshAgent agent;
     protected Animator animator;
-
     protected bool isAttacking = false;
     bool isDead = false;
     bool isRotate = false;
-
-    [SerializeField] protected Transform[] waypoints;
-    protected int curretWaypointIndex = 0;
-
     float attackCooldown = 3.0f;
     float attackCooldownTimer = 0;
     #endregion
@@ -49,8 +48,63 @@ public abstract class MonsterBase : MonoBehaviour
         SetCooldown();
         StateMachine();
     }
+    #endregion
 
-    protected abstract void Wander();
+    #region StateMachine
+    void StateMachine()
+    {
+        switch (monsterState)
+        {
+            case MonsterState.Wander:
+                CheckToRange(chaseRange, MonsterState.Chase); // 추적 범위 안이면 추적 상태
+                Wander();
+                break;
+
+            case MonsterState.Chase:
+                CheckToRange(attackRange, MonsterState.Attack, chaseRange, MonsterState.Wander); // 공격 범위 안이면 공격 상태, 추적 범위 밖이면 배회 상태
+                Chase();
+                break;
+
+            case MonsterState.Attack:
+                FallBackState(attackRange, MonsterState.Chase); // 공격 범위 밖이면 추적 상태
+                if (attackCooldownTimer <= 0) // 공격 쿨타임
+                {
+                    StartCoroutine(LookAtPlayer());
+                    StartCoroutine(Attack());
+                    attackCooldownTimer = attackCooldown;
+                }
+                break;
+
+            case MonsterState.Death:
+                Death();
+                break;
+        }
+    }
+
+    protected virtual void Wander()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending) // 목표에 도달했을 때만 다음 위치 찾기
+        {
+            Vector3 randomDir = Random.insideUnitSphere * moveRadius; // 현 위치를 기준으로 랜덤한 위치 찾기
+            randomDir += transform.position;
+
+            randomDir.y = transform.position.y; // 수평으로만 이동하도록 고정
+
+            if (Vector3.Distance(transform.position, randomDir) < 2f)  // 목표 위치가 너무 가까우면 다시 계산
+            {
+                return;
+            }
+
+            if (Physics.CheckSphere(randomDir, 0.5f, obstaclesLayer)) // 장애물 레이어 체크 후 없으면 해당 위치로 이동
+            {
+                return; // 충돌 있으면 이동 X
+            }
+
+            agent.SetDestination(randomDir); // 새 목적지 설정
+        }
+
+        MoveBlendTree();
+    }
 
     protected virtual void Chase()
     {
@@ -72,46 +126,6 @@ public abstract class MonsterBase : MonoBehaviour
         agent.isStopped = true;
         animator.SetTrigger("Death");
         StartCoroutine(DestroyObject(5.0f));
-    }
-
-    void StateMachine()
-    {
-        switch (monsterState)
-        {
-            case MonsterState.Wander:
-                /// <summary>
-                /// 추적 범위 안이면 추적 상태로
-                /// </summary>
-                CheckToRange(chaseRange, MonsterState.Chase);
-                Wander();
-                break;
-
-            case MonsterState.Chase:
-                /// <summary> 
-                /// 공격 범위 안이면 공격 상태로,
-                /// 추적 범위 밖이면 배회 상태로
-                /// </summary>
-                CheckToRange(attackRange, MonsterState.Attack, chaseRange, MonsterState.Wander);
-                Chase();
-                break;
-
-            case MonsterState.Attack:
-                /// <summary>
-                /// 공격 범위 밖이면 추적 상태로
-                /// </summary>
-                FallBackState(attackRange, MonsterState.Chase);
-                if (attackCooldownTimer <= 0)
-                {
-                    StartCoroutine(LookAtPlayer());
-                    StartCoroutine(Attack());
-                    attackCooldownTimer = attackCooldown;
-                }
-                break;
-
-            case MonsterState.Death:
-                Death();
-                break;
-        }
     }
     #endregion
 
@@ -186,17 +200,6 @@ public abstract class MonsterBase : MonoBehaviour
         }
 
         agent.SetDestination(target.position);
-    }
-
-    protected void MoveToWaypoint() // 웨이포인트로 이동
-    {
-        if (waypoints.Length == 0)
-        {
-            Debug.LogError($"{transform.name}의 MoveToWaypoint 함수 에러 발생.\n웨이포인트 배열이 비어있습니다.");
-            return;
-        }
-
-        agent.SetDestination(waypoints[curretWaypointIndex].position);
     }
 
     protected void MoveBlendTree() // 이동 블렌드트리 변경
