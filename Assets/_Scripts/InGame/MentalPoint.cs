@@ -5,10 +5,9 @@ public class MentalPoint : MonoBehaviour
     public float maxMentalPoint;
     public float currentMentalPoint;
 
-    Status status;
+    public Status status;
     private void Awake()
     {
-        status = GetComponent<Status>();
         maxMentalPoint = status.MentalPoint;
         currentMentalPoint = maxMentalPoint;
     }

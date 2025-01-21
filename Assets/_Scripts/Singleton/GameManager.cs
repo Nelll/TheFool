@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,5 +18,29 @@ public class GameManager : MonoBehaviour
             }
             return instance;
         }
+    }
+
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+    public void LoadGameWin()
+    {
+        SceneManager.LoadScene("GameWinScene");
+    }
+
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOverScene");
+    }
+
+    public void OnPressedQuit()
+    {
+        Application.Quit();
     }
 }

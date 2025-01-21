@@ -849,17 +849,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1141094762 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5666906591131355432, guid: 1eb55eaa9d3be454aa0e238677755264, type: 3}
-  m_PrefabInstance: {fileID: 2520470807750836363}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1456199253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,6 +881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMentalPoint: 0
   currentMentalPoint: 0
+  status: {fileID: 0}
 --- !u!114 &1456199260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,6 +934,10 @@ PrefabInstance:
     - target: {fileID: 130632516103225203, guid: 41651999ce018214388da3475bcc2d56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 96.91347
+      objectReference: {fileID: 0}
+    - target: {fileID: 162962401840038028, guid: 41651999ce018214388da3475bcc2d56, type: 3}
+      propertyPath: invincibilityTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 223658857371492462, guid: 41651999ce018214388da3475bcc2d56, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2805,25 +2799,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!1 &1726269946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5145443338878882264, guid: 1eb55eaa9d3be454aa0e238677755264, type: 3}
-  m_PrefabInstance: {fileID: 2520470807750836363}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1726269947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726269946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2224f1353648ff14dbedc02225b4db10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 7733992897839848562}
-  healthBarImage: {fileID: 1141094762}
 --- !u!1001 &1830026169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11365,6 +11340,11 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 968342948}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1965341800 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 5945821652131442731, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
+  m_PrefabInstance: {fileID: 466629428667372040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1980212055
 GameObject:
   m_ObjectHideFlags: 0
@@ -11463,10 +11443,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4155045106380090796, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
+      propertyPath: invincibilityTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7868595222874725703, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8927155113684911184, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
+      propertyPath: status
+      value: 
+      objectReference: {fileID: 11400000, guid: c89a2a4de618442479483c0f10c5c79d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11567,13 +11555,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6012624638919386575, guid: 1eb55eaa9d3be454aa0e238677755264, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 7733992897839848562}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5145443338878882264, guid: 1eb55eaa9d3be454aa0e238677755264, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1726269947}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb55eaa9d3be454aa0e238677755264, type: 3}
 --- !u!1 &2979909415908560535 stripped
 GameObject:
@@ -11845,6 +11834,10 @@ PrefabInstance:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 3907273513227557774}
+    - target: {fileID: 4109865896630630403, guid: fabe15c1eefc55b4594c26ca5d82514d, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 5394821648484987954, guid: fabe15c1eefc55b4594c26ca5d82514d, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -11871,7 +11864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7619ae416a656d478275df1e2d2c543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponCollider: {fileID: 0}
+  weaponCollider: {fileID: 1965341800}
 --- !u!114 &7733992897839848562 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4155045106380090796, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}

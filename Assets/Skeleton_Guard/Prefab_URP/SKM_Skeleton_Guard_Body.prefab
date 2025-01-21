@@ -1015,9 +1015,6 @@ GameObject:
   - component: {fileID: 8293231475881652283}
   - component: {fileID: 8888854609078708793}
   - component: {fileID: 3618071253269222583}
-  - component: {fileID: 623746002110756256}
-  - component: {fileID: 4074817950903475548}
-  - component: {fileID: 8106860350192070028}
   m_Layer: 0
   m_Name: SKM_Skeleton_Guard_Body
   m_TagString: Monster
@@ -1120,50 +1117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71064a8688ef95d4b8bb9a732132bb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &623746002110756256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044939339183439356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b367fdfca9da54c8c7a77da799329a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invincibilityTime: 2
-  maxHealth: 0
-  currentHealth: 0
-  isDead: 0
-  isInvincibilityTime: 0
-  status: {fileID: 0}
---- !u!114 &4074817950903475548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044939339183439356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b0146bdd5ea1ce409d570893ab46e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2044939339183439356}
---- !u!114 &8106860350192070028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2044939339183439356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd20f5226c641b344a211da891b92794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  status: {fileID: 11400000, guid: 206c6df1349396745a7c44e354ac1ab1, type: 2}
 --- !u!1 &2295594901543767374
 GameObject:
   m_ObjectHideFlags: 0

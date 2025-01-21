@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 2947334889552352738}
   - component: {fileID: 852208115918242490}
   - component: {fileID: 4089016107854681484}
+  - component: {fileID: 6012624638919386575}
   m_Layer: 5
   m_Name: StatCanvas
   m_TagString: Untagged
@@ -327,6 +328,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6012624638919386575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5145443338878882264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2224f1353648ff14dbedc02225b4db10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  healthBarImage: {fileID: 5666906591131355432}
 --- !u!1 &5421075509499153418
 GameObject:
   m_ObjectHideFlags: 0

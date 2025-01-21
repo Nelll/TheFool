@@ -1,3 +1,4 @@
+using InfinityPBR;
 using System;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ public class Health : MonoBehaviour
     public bool isDead;
     public bool isInvincibilityTime = false;
     float count = 0;
-    public Action<Health> OnDie;
 
     public Status status;
     
@@ -47,8 +47,21 @@ public class Health : MonoBehaviour
         if(currentHealth == 0)
         {
             isDead = true;
-
-            OnDie?.Invoke(this);
+            OnDie();
+            //Invoke("OnDie", 3f);
         }
+    }
+
+    void OnDie()
+    {
+        if(this.CompareTag("Player"))
+        {
+            GameManager.Instance.LoadGameOver();
+        }
+        if(this.CompareTag("BossMonster"))
+        {
+            GameManager.Instance.LoadGameWin();
+        }
+        Destroy(this.gameObject);
     }
 }

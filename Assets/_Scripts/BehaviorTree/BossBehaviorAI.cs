@@ -17,6 +17,8 @@ public class BossBehaviorAI : MonoBehaviour
     [SerializeField] private GameObject[] breatheProp;      // 브레스 파티클 제외 기타 요소
     [SerializeField] private GameObject[] HitDamageBoxes;   // 데미지 받는 콜라이더
 
+    public Status status;
+
     Vector3 originPosition;
     BehaviorTreeRunner btRunner;
     Transform detectedPlayer;
@@ -361,37 +363,37 @@ public class BossBehaviorAI : MonoBehaviour
 
     void StartAttack01()
     {
-        damage = 5;
+        damage = status.Attack;
         animator.SetTrigger("Attack01");
     }
 
     void StartAttack02()
     {
-        damage = 5;
+        damage = status.Attack;
         animator.SetTrigger("Attack02");
     }
 
     void StartTailAttack()
     {
-        damage = 10;
+        damage = status.Attack + 10;
         animator.SetTrigger("TailWhipL");
     }
 
     void StartBreathe()
     {
-        damage = 15;
+        damage = status.Attack + 30;
         animator.SetTrigger("BreatheFire");
     }
 
     void StartFlyAttack()
     {
-        damage = 15;
+        damage = status.Attack + 50;
         animator.SetTrigger("FlyAttackSet");
     }
 
     void StartFlyBreathe()
     {
-        damage = 20;
+        damage = status.Attack + 100;
         animator.SetTrigger("FlyBreatheFireSet");
     }
 
