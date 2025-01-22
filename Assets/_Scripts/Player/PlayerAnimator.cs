@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject attackCollision;
+    [SerializeField] private GameObject attackCollision;
     private Animator animator;
 
     private void Awake()

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerSoundManager : MonoBehaviour
@@ -16,6 +17,9 @@ public class PlayerSoundManager : MonoBehaviour
     public AudioClip attackSound3;
     public AudioClip attackSound4;
 
+    // * 추가한 부분
+    private bool isSoundEnabled = false;
+
     private void Awake()
     {
         // 싱글톤 패턴 설정
@@ -28,6 +32,21 @@ public class PlayerSoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    // * 추가한 부분
+    private void Start()
+    {
+        sfxSource.mute = true;  // 게임 시작 시 소리를 비활성화
+        StartCoroutine(EnableSoundAfterDelay(1.0f)); // 1초 후 소리 활성화
+    }
+
+    // * 추가한 부분
+    private IEnumerator EnableSoundAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        sfxSource.mute = false;  // 일정 시간 후 소리 활성화
+        isSoundEnabled = true;
     }
 
     public void PlaySound(AudioClip clip, float volume = 1.0f)

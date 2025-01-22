@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerAnimator playerAnimator;
 
+    // * 추가한 부분
+    private bool initialClickBlocked = false;   
+    private bool isSoundEnabled = false;
+
     private void Awake()
     {
         Cursor.visible = false; // 마우스 커서 보이지 않게
@@ -20,6 +24,19 @@ public class PlayerController : MonoBehaviour
 
         playerMovement = GetComponent<PlayerMovement>();
         playerAnimator = GetComponentInChildren<PlayerAnimator>();
+
+        // *(추가한 부분) 게임 시작 시 마우스 버튼이 눌린 경우 방지
+        if (Input.GetMouseButton(0))
+        {
+            initialClickBlocked = true;
+        }
+    }
+
+    // * 추가한 부분
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(1.0f); // 1초 후 활성화
+        isSoundEnabled = true;
     }
 
     private void Update()

@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;                      // 이동방향
 
     private CharacterController characterController;
-    private bool isRolling = false; // 구르기 상태 변수
+    private bool isRolling = false;                     // 구르기 상태 변수
     private bool isRunning = false;                     // 달리기 상태 변수
 
     private void Awake()
@@ -58,14 +58,14 @@ public class PlayerMovement : MonoBehaviour
         return characterController.isGrounded;
     }
 
-    //public void Jump()
-    //{
-    //    if (characterController.isGrounded)
-    //    {
-    //        moveDirection.y = jumpPower;
-    //        StartCoroutine(DisableGravityForMoment());
-    //    }
-    //}
+    /*public void Jump()
+    {
+        if (characterController.isGrounded)
+        {
+            moveDirection.y = jumpPower;
+            StartCoroutine(DisableGravityForMoment());
+        }
+    }
 
     private IEnumerator DisableGravityForMoment()
     {
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         gravity = 0; // 중력 비활성화
         yield return new WaitForSeconds(0.2f); // 일정 시간 대기
         gravity = gravityBackup; // 중력 복구
-    }
+    }*/
 
     // 달리기 상태를 설정
     public void Run(bool isRun)
