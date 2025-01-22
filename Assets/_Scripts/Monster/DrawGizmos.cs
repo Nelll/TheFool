@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class DrawGizmos : MonoBehaviour
 {
-    [Tooltip("공격 범위")] float attackRange;
-    [Tooltip("추적 범위")] float chaseRange;
-    [Tooltip("이동 반경")] float moveRadius;
+    float attackRange; // 공격 범위
+    float chaseRange; // 추적 범위
+    float moveRadius; // 이동 반경
 
     void Start()
     {
