@@ -764,8 +764,8 @@ MonoBehaviour:
   rollSound: {fileID: 8300000, guid: 30d92fb8d4a0bfe45959f759b48f4c85, type: 3}
   attackSound1: {fileID: 8300000, guid: 9f5e8464bb9c2dc4cad0392a182ba8b7, type: 3}
   attackSound2: {fileID: 8300000, guid: dc98c2d2e05d27f4281e302410fd755e, type: 3}
-  attackSound3: {fileID: 8300000, guid: 26675a04bd81c154e8eb689f7eb9b957, type: 3}
-  attackSound4: {fileID: 8300000, guid: ecd43020ed4bc794991f661c98182ac9, type: 3}
+  attackSound3: {fileID: 8300000, guid: 866c907b2e3cbec4cb94f08a5fe69cbc, type: 3}
+  attackSound4: {fileID: 8300000, guid: 7c122309aa7cdb14e810199ddcf98fc0, type: 3}
 --- !u!4 &1039446594
 Transform:
   m_ObjectHideFlags: 0
@@ -11443,6 +11443,10 @@ PrefabInstance:
     - target: {fileID: 3179175320472474245, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713140103138363531, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
+      propertyPath: rollSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4155045106380090796, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
       propertyPath: invincibilityTime
