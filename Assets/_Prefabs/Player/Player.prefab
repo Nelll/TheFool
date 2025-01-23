@@ -7225,6 +7225,7 @@ GameObject:
   - component: {fileID: 4155045106380090796}
   - component: {fileID: 8927155113684911184}
   - component: {fileID: 7683472664498537112}
+  - component: {fileID: 6673053565570026332}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -7240,7 +7241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7868595222874725703}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -2.919}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
@@ -7250,7 +7251,7 @@ Transform:
   - {fileID: 442898975663821957}
   - {fileID: 7086641569200667360}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &6689820498040555572
 Animator:
   serializedVersion: 7
@@ -7422,7 +7423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   runSpeed: 8
-  rollSpeed: 10
+  rollSpeed: 4
   rollDuration: 1.15
   jumpPower: 2
 --- !u!114 &1359480276088671638
@@ -7451,7 +7452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b367fdfca9da54c8c7a77da799329a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincibilityTime: 2
+  invincibilityTime: 1
   maxHealth: 0
   currentHealth: 0
   isDead: 0
@@ -7471,6 +7472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxMentalPoint: 0
   currentMentalPoint: 0
+  status: {fileID: 11400000, guid: c89a2a4de618442479483c0f10c5c79d, type: 2}
 --- !u!114 &7683472664498537112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7484,6 +7486,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: {fileID: 11400000, guid: c89a2a4de618442479483c0f10c5c79d, type: 2}
+--- !u!114 &6673053565570026332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7868595222874725703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7619ae416a656d478275df1e2d2c543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponCollider: {fileID: 5945821652131442731}
 --- !u!1 &7897669178284066538
 GameObject:
   m_ObjectHideFlags: 0
