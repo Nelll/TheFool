@@ -8,6 +8,8 @@ public abstract class MonsterBase : MonoBehaviour
 {
     #region Variables
     public MonsterState monsterState;
+    public MonsterState MonsterState { set { monsterState = value; } }
+
     [SerializeField] protected Transform target;
     [SerializeField] protected float chaseRange;
     [SerializeField] protected float attackRange;
@@ -20,7 +22,7 @@ public abstract class MonsterBase : MonoBehaviour
     protected NavMeshAgent agent;
     protected Animator animator;
     protected bool isAttacking = false;
-    bool isDead = false;
+    protected bool isDead = false;
     bool isRotate = false;
     float attackCooldown = 3.0f;
     float attackCooldownTimer = 0;
@@ -42,8 +44,6 @@ public abstract class MonsterBase : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (isDead) return;
-
         DistanceToPlayer();
         SetCooldown();
         StateMachine();
@@ -76,7 +76,11 @@ public abstract class MonsterBase : MonoBehaviour
                 break;
 
             case MonsterState.Death:
-                Death();
+                if (!isDead)
+                {
+                    Death();
+                    isDead = true;
+                }
                 break;
         }
     }
@@ -122,10 +126,13 @@ public abstract class MonsterBase : MonoBehaviour
 
     protected virtual void Death()
     {
-        isDead = true;
-        agent.isStopped = true;
+        if (agent != null)
+        {
+            agent.isStopped = true;
+            agent.enabled = false;
+        }
         animator.SetTrigger("Death");
-        StartCoroutine(DestroyObject(5.0f));
+        StartCoroutine(DestroyObject(3.0f));
     }
     #endregion
 

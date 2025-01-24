@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     float count = 0;
 
     public Status status;
-    
+
     private void Awake()
     {
         maxHealth = status.Health;
@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
         if (isInvincibilityTime == true)
         {
             count += Time.deltaTime;
-            if(count >= invincibilityTime)
+            if (count >= invincibilityTime)
             {
                 isInvincibilityTime = false;
                 count = 0;
@@ -44,24 +44,29 @@ public class Health : MonoBehaviour
         int newHealth = currentHealth + value;
         currentHealth = Mathf.Clamp(newHealth, 0, maxHealth);
 
-        if(currentHealth == 0)
+        if (currentHealth <= 0)
         {
             isDead = true;
             OnDie();
             //Invoke("OnDie", 3f);
-        }
+        }   
     }
 
     void OnDie()
     {
-        if(this.CompareTag("Player"))
+        MonsterBase monsterBase = GetComponent<MonsterBase>();
+
+        if (monsterBase != null)
+        {
+            monsterBase.MonsterState = MonsterState.Death;
+        }
+        if (this.CompareTag("Player"))
         {
             GameManager.Instance.LoadGameOver();
         }
-        if(this.CompareTag("BossMonster"))
+        if (this.CompareTag("BossMonster"))
         {
             GameManager.Instance.LoadGameWin();
         }
-        Destroy(this.gameObject);
     }
 }

@@ -5,8 +5,10 @@ public class MonsterBug : MonsterBase
 {
     protected override IEnumerator Attack()
     {
-        if (isAttacking) yield break;
+        if (isAttacking || agent == null || !agent.isOnNavMesh) yield break;
+
         isAttacking = true;
+
         agent.isStopped = true;
 
         int randomIndex = Random.Range(0, 3);
@@ -30,7 +32,12 @@ public class MonsterBug : MonsterBase
         yield return new WaitForSeconds(animationDuration);
 
         isAttacking = false;
-        agent.isStopped = false;
+
+        if (agent != null && agent.isOnNavMesh)
+        {
+            agent.isStopped = false;
+        }
+
         animator.SetTrigger("Finish");
     }
 }

@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 7928277140776244025}
   - component: {fileID: 7489168895124615040}
   - component: {fileID: 8172862846985446906}
-  - component: {fileID: 4365448478625669817}
   m_Layer: 0
   m_Name: MonsterStatCanvas
   m_TagString: Untagged
@@ -149,17 +148,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06e2f4e9417d8d4d89073cafe15b005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4365448478625669817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7415732803647335858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2224f1353648ff14dbedc02225b4db10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 0}
-  healthBarImage: {fileID: 7890914519824428856}

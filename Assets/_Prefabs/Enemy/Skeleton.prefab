@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SKM_Skeleton_Guard_Body
       objectReference: {fileID: 0}
+    - target: {fileID: 4740857772098043196, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -121,6 +125,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2044939339183439356, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 43426925874818023}
+    - targetCorrespondingSourceObject: {fileID: 8204986088559299319, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5633075263188710577}
     - targetCorrespondingSourceObject: {fileID: 431916613601264193, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7989654211701853679}
@@ -260,7 +267,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 3.5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -295,7 +302,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -353,6 +360,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 636545570920896178}
+--- !u!1 &7307535475467608505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8204986088559299319, guid: 5b2334b457579d048b68cb7c664874fb, type: 3}
+  m_PrefabInstance: {fileID: 1491926968786398030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5633075263188710577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307535475467608505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0018be87d91162a49ae12709b7550a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 5974172670820998969}
 --- !u!1001 &6367546030252412561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,14 +478,46 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0.1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4365448478625669817, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7415732803647335858, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8504341317000890530}
   m_SourcePrefab: {fileID: 100100000, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
+--- !u!114 &3881040278437470633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7890914519824428856, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
+  m_PrefabInstance: {fileID: 6367546030252412561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3916151925551504808 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7928277140776244025, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
   m_PrefabInstance: {fileID: 6367546030252412561}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4519336737292985123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7415732803647335858, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
+  m_PrefabInstance: {fileID: 6367546030252412561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8504341317000890530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519336737292985123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2224f1353648ff14dbedc02225b4db10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 5974172670820998969}
+  healthBarImage: {fileID: 3881040278437470633}
