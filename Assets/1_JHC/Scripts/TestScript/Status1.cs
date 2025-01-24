@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Status", menuName = "Scriptable Objects/Status")]
-public class Status : ScriptableObject
+[CreateAssetMenu(fileName = "Status1", menuName = "Scriptable Objects/Status1")]
+public class Status1 : ScriptableObject
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private string name;

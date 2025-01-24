@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 using TreeEditor;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     [SerializeField] private Transform cameraTransform; // 카메라 Transform, 이동 방향 계산에 사용
 
     [Header("데미지 관련")]
-    [SerializeField] private Status playerStatus;
+    [SerializeField] private Status1 playerStatus;
     [SerializeField] private DamageManager damageManager;
 
     [Header("스킬 쿨타임")]
