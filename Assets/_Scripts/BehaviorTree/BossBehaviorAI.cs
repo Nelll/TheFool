@@ -13,10 +13,6 @@ public class BossBehaviorAI : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;      // 이동 속도 
     [SerializeField] private float rotationSpeed = 10;  // 회전 속도
 
-    [SerializeField] private GameObject[] breatheParticles; // 브레스 파티클
-    [SerializeField] private GameObject[] breatheProp;      // 브레스 파티클 제외 기타 요소
-    [SerializeField] private GameObject[] HitDamageBoxes;   // 데미지 받는 콜라이더
-
     public Status status;
 
     Vector3 originPosition;
@@ -395,50 +391,5 @@ public class BossBehaviorAI : MonoBehaviour
     {
         damage = status.Attack + 100;
         animator.SetTrigger("FlyBreatheFireSet");
-    }
-
-    // Dragon Breathe
-    public void StartBreatheParticle()
-    {
-        for(int l =0; l< breatheProp.Length; l++)
-        {
-            breatheProp[l].SetActive(true);
-        }
-        for(int p = 0; p < breatheParticles.Length; p++)
-        {
-            breatheParticles[p].GetComponent<ParticleSystem>().Play();
-        }
-    }
-
-    public void StopBreatheParticle()
-    {
-        for (int l = 0; l < breatheProp.Length; l++)
-        {
-            breatheProp[l].SetActive(false);
-        }
-        for (int p = 0; p < breatheParticles.Length; p++)
-        {
-            breatheParticles[p].GetComponent<ParticleSystem>().Stop();
-        }
-    }
-
-    // HitBox 활성화
-    public void StartHitDamageBoxActive()
-    {
-        // HitBox 전체 활성화
-        for (int i = 0; i < HitDamageBoxes.Length; i++)
-        {
-            HitDamageBoxes[i].SetActive(true);
-        }
-
-    }
-
-    // HitBox 비활성화
-    public void StopHitDamageBoxActive()
-    {
-        for(int i = 0; i < HitDamageBoxes.Length; i++)
-        {
-            HitDamageBoxes[i].SetActive(false);
-        }
     }
 }

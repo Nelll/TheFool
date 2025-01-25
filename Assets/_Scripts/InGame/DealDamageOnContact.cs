@@ -11,15 +11,15 @@ public class DealDamageOnContact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        // 플레이어가 데미지를 받을 경우
         if(other.CompareTag("Player") && other.GetComponent<Health>().isInvincibilityTime == false)
         {
             if (prefab.CompareTag("BossMonster"))
-            {
+            { // 데미지를 준게 보스 몬스터인 경우
                 damage = prefab.GetComponent<BossBehaviorAI>().Damage;
             }
             if(prefab.CompareTag("Monster"))
-            {
+            { // 데미지를 준게 일반 몬스터인 경우
                 damage = prefab.GetComponent<DamageManager>().Damage;
             }
             other.GetComponent<Health>().TakeDamage(damage);
@@ -27,6 +27,7 @@ public class DealDamageOnContact : MonoBehaviour
             other.GetComponent<Health>().isInvincibilityTime = true;
         }
 
+        // 보스 몬스터가 데미지를 받을 경우
         if(other.CompareTag("BossMonster") && other.GetComponentInParent<Health>().isInvincibilityTime == false)
         {
             damage = prefab.GetComponent<DamageManager>().Damage;
@@ -35,6 +36,7 @@ public class DealDamageOnContact : MonoBehaviour
             other.GetComponentInParent<Health>().isInvincibilityTime = true;
         }
 
+        // 일반 몬스터가 데미지를 받을 경우
         if (other.CompareTag("Monster") && other.GetComponent<Health>().isInvincibilityTime == false)
         {
             damage = prefab.GetComponent<DamageManager>().Damage;
