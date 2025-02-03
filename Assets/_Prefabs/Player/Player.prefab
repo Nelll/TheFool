@@ -21911,7 +21911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51593a8b158761b42b8316cc82727a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCollision: {fileID: 7286424564926922145}
 --- !u!114 &3713140103138363531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21925,7 +21924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  runSpeed: 8
+  runSpeed: 20
   rollSpeed: 4
   rollDuration: 1.15
   jumpPower: 2
@@ -21946,6 +21945,7 @@ MonoBehaviour:
   damageManager: {fileID: 7683472664498537112}
   skillUIManager: {fileID: 0}
   ultimateCooldown: 5
+  hitAnimationDuration: 0.5
   trailEffect: {fileID: 4379034892070728372}
 --- !u!114 &4155045106380090796
 MonoBehaviour:

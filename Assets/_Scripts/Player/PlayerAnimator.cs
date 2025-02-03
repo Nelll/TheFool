@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    [SerializeField] private GameObject attackCollision;
     private Animator animator;
 
     private void Awake()
@@ -41,9 +40,9 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetTrigger("onUltimateAttack");
     }
 
-    // 애니메이션이 재생되는 도중 특정 프레임에서 호출 하도록 설정
-    public void OnAttackCollision()
+    public void OnHit()
     {
-        attackCollision.SetActive(true);
+        animator.SetTrigger("onHit");
     }
+
 }

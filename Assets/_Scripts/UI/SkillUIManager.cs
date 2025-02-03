@@ -32,7 +32,7 @@ public class SkillUIManager : MonoBehaviour
     {
         if (isCooldownActive)
         {
-            StartUltimateCooldown(5.0f);  // 5초 쿨타임 시작
+            StartUltimateCooldown(10.0f);  // 10초 쿨타임 시작
         }
         else
         {

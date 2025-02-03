@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SkillUIManager skillUIManager;
     [SerializeField] private float ultimateCooldown = 5.0f;  // 궁극기 쿨타임 (초 단위)
 
+    [SerializeField] private float hitAnimationDuration = 0.5f; // hit애니메이션 실행중 경직 시간(애니메이션에 맞게 설정)
+
     public TrailRenderer trailEffect;
     private PlayerMovement playerMovement;
     private PlayerAnimator playerAnimator;
+    private Health playerHealth;
 
     // * 추가한 부분
     private bool initialClickBlocked = false;
@@ -33,6 +36,13 @@ public class PlayerController : MonoBehaviour
 
         playerMovement = GetComponent<PlayerMovement>();
         playerAnimator = GetComponentInChildren<PlayerAnimator>();
+        playerHealth = GetComponent<Health>();
+
+        // Health의 데미지 이벤트에 구독 (플레이어라면 피격 애니메이션 실행)
+        if (playerHealth != null)
+        {
+            playerHealth.OnDamageTaken += HandleDamageTaken;
+        }
 
         // *(추가한 부분) 게임 시작 시 마우스 버튼이 눌린 경우 방지
         if (Input.GetMouseButton(0))
@@ -46,6 +56,45 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f); // 1초 후 활성화
         isSoundEnabled = true;
+    }
+
+    private void OnDestroy()
+    {
+        // 이벤트 구독 해제
+        if (playerHealth != null)
+        {
+            playerHealth.OnDamageTaken -= HandleDamageTaken;
+        }
+    }
+
+    // Health에서 데미지 이벤트 발생 시 호출되는 메서드
+    private void HandleDamageTaken(int damage)
+    {
+        TriggerHitAnimation();
+    }
+
+    // Hit 애니메이션 실행과 동시에 이동 비활성화 처리
+    public void TriggerHitAnimation()
+    {
+        if (playerAnimator != null)
+        {
+            playerAnimator.OnHit();
+        }
+        StartCoroutine(DisableMovementDuringHit());
+    }
+
+    // 히트 애니메이션 동안 PlayerMovement 컴포넌트를 비활성화
+    private IEnumerator DisableMovementDuringHit()
+    {
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = false;
+        }
+        yield return new WaitForSeconds(hitAnimationDuration);
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = true;
+        }
     }
 
     private void Update()
@@ -149,4 +198,5 @@ public class PlayerController : MonoBehaviour
     public void PlayAttackSound3() => PlayerSoundManager.Instance.PlayAttackSound3();
     public void PlayAttackSound4() => PlayerSoundManager.Instance.PlayAttackSound4();
     public void PlayRollSound() => PlayerSoundManager.Instance.PlayRollSound();
+    public void PlayHitSound() => PlayerSoundManager.Instance.PlayHitSound();
 }

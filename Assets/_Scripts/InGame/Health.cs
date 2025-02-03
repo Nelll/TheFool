@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public event Action<int> OnDamageTaken;
+
     public float invincibilityTime = 2f;
     public int maxHealth;
     public int currentHealth;
@@ -36,6 +38,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         ModifyHealth(-damage);
+
+        // 데미지 이벤트 발생
+        OnDamageTaken?.Invoke(damage);
     }
 
     void ModifyHealth(int value)
