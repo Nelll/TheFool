@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2158233597568149046, guid: 45f972c06feefb648af0ff126154061e, type: 3}
   name: Bug
-  health: 100
+  health: 250
   mentalPoint: 0
-  attack: 30
+  attack: 100
+  ultimateAttackDamage: 0
   defense: 0

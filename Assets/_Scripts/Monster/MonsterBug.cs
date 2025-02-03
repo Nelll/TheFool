@@ -11,23 +11,28 @@ public class MonsterBug : MonsterBase
 
         agent.isStopped = true;
 
-        int randomIndex = Random.Range(0, 3);
         float animationDuration = 0f;
 
-        switch (randomIndex)
+        if (distanceToPlayer >= 1.5f)
         {
-            case 0:
-                animator.SetTrigger("Roar1");
-                animationDuration = 2.333f;
-                break;
-            case 1:
-                animator.SetTrigger("Roar2");
-                animationDuration = 1.333f;
-                break;
-            case 2:
-                animator.SetTrigger("Attack");
-                animationDuration = 0.667f;
-                break;
+            animator.SetTrigger("Stinger");
+            animationDuration = 0.667f;
+        }
+        else
+        {
+            int randomIndex = Random.Range(0, 2);
+
+            switch (randomIndex)
+            {
+                case 0:
+                    animator.SetTrigger("Roar");
+                    animationDuration = 2.333f;
+                    break;
+                case 1:
+                    animator.SetTrigger("Dash");
+                    animationDuration = 0.667f;
+                    break;
+            }
         }
         yield return new WaitForSeconds(animationDuration);
 

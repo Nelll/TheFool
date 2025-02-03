@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1204104837043967579, guid: 666f7fd39e451d04bb84566618471643, type: 3}
   name: Skeleton
-  health: 300
+  health: 400
   mentalPoint: 0
-  attack: 50
+  attack: 200
+  ultimateAttackDamage: 0
   defense: 0

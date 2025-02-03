@@ -14,8 +14,8 @@ public abstract class MonsterBase : MonoBehaviour
     [SerializeField] protected float chaseRange;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float moveRadius;
+    [SerializeField] protected float distanceToPlayer;
     [SerializeField] LayerMask obstaclesLayer; // 장애물로 인지할 레이어
-    [SerializeField] float distanceToPlayer;
     [HideInInspector] public float ChaseRange { get { return chaseRange; } }
     [HideInInspector] public float AttackRange { get { return attackRange; } }
     [HideInInspector] public float MoveRadius { get { return moveRadius; } }
