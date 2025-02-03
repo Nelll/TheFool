@@ -554,7 +554,7 @@ MonoBehaviour:
   monsterState: 0
   target: {fileID: 0}
   chaseRange: 3
-  attackRange: 1
+  attackRange: 3
   moveRadius: 4
   obstaclesLayer:
     serializedVersion: 2
