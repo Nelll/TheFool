@@ -17,4 +17,5 @@ MonoBehaviour:
   health: 2000
   mentalPoint: 0
   attack: 60
+  ultimateAttackDamage: 0
   defense: 0

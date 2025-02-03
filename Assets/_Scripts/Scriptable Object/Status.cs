@@ -6,7 +6,7 @@ public class Status : ScriptableObject
     [SerializeField] private GameObject prefab;
     [SerializeField] private string name;
     [SerializeField] private int health;
-    [SerializeField] private float mentalPoint;
+    [SerializeField] private int mentalPoint;
     [SerializeField] private int attack;
     [SerializeField] private int ultimateAttackDamage; // ±Ã±Ø±â µ¥¹ÌÁö
     [SerializeField] private int defense;
@@ -17,7 +17,7 @@ public class Status : ScriptableObject
     { get { return name; } }
     public int Health
     { get { return health; } }
-    public float MentalPoint
+    public int MentalPoint
     { get { return mentalPoint; } }
     public int Attack
     { get { return attack; } }

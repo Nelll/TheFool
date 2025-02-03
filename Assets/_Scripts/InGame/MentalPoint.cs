@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MentalPoint : MonoBehaviour
 {
-    public float maxMentalPoint;
-    public float currentMentalPoint;
+    public int maxMentalPoint;
+    public int currentMentalPoint;
 
     public Status status;
     private void Awake()
@@ -12,19 +13,25 @@ public class MentalPoint : MonoBehaviour
         currentMentalPoint = maxMentalPoint;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         ModifyMentalPoint(-damage);
     }
 
-    public void Restore(float mentalPoint)
+    public void Restore(int mentalPoint)
     {
         ModifyMentalPoint(mentalPoint);
     }
 
 
-    void ModifyMentalPoint(float value)
+    void ModifyMentalPoint(int value)
     {
-        currentMentalPoint = Mathf.Clamp(currentMentalPoint + value, 0, maxMentalPoint);
+        int newMentalPoint = currentMentalPoint + value;
+        currentMentalPoint = Mathf.Clamp(newMentalPoint, 0, maxMentalPoint);
+
+        if(currentMentalPoint <= 0)
+        {
+            GameManager.Instance.LoadGameOver();
+        }
     }
 }

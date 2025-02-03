@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7868595222874725703, guid: 068677bce6e19a041aca9d492bda2bb7, type: 3}
   name: Player
-  health: 1000
+  health: 2000
   mentalPoint: 100
   attack: 50
   ultimateAttackDamage: 60

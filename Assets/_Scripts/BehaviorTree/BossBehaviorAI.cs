@@ -10,8 +10,10 @@ public class BossBehaviorAI : MonoBehaviour
 {
     [SerializeField] private float detectRange = 10f;   // 탐지 범위
     [SerializeField] private float attackRange = 5f;    // 공격 범위
+    [SerializeField] private float notAttackRange = 2f; // 공격 안맞아서 이동하는 범위
     [SerializeField] private float moveSpeed = 3f;      // 이동 속도 
     [SerializeField] private float rotationSpeed = 10;  // 회전 속도
+    [SerializeField] private Transform notAttackMovePosition; // 공격 안맞아서 이동할 때 쓰는 타겟
 
     public Status status;
 
@@ -47,7 +49,6 @@ public class BossBehaviorAI : MonoBehaviour
     {
         btRunner.Operate(); // Behavior Tree 반복
         rand = Random.Range(1, 10);
-
         if (detectedPlayer != null)
         {
             if (Vector3.Magnitude(detectedPlayer.position - transform.position) < attackRange)
@@ -95,6 +96,8 @@ public class BossBehaviorAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, detectRange);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, notAttackRange);
     }
 
     NodeState CheckIsAttacking()
@@ -134,6 +137,12 @@ public class BossBehaviorAI : MonoBehaviour
         // 공격 범위로 들어왔는지 체크
         if (detectedPlayer != null)
         {
+            if(Vector3.Magnitude(detectedPlayer.position - transform.position) < notAttackRange)
+            {
+                // 공격 범위 안에서도 공격하지 못하는 범위 안이면 원래 있던 자리로 이동하면서 공격 범위 안으로 들어오게 하기
+                StartMove(notAttackMovePosition.position);
+                return NodeState.Running;
+            }
             if(Vector3.Magnitude(detectedPlayer.position - transform.position) < attackRange)
             {
                 return NodeState.Success;
@@ -344,6 +353,19 @@ public class BossBehaviorAI : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, position, (moveSpeed + 3) * Time.deltaTime);
         }
+    }
+
+    void RandomMove()
+    {
+        if(Mathf.Abs(transform.rotation.eulerAngles.y) < 90)
+        {
+            StartMove(transform.position + (Vector3.back * 3));
+        }
+        else
+        {
+            StartMove(transform.position + (Vector3.forward * 3));
+        }
+
     }
 
     void LookAtDetected(Vector3 position, float speed)

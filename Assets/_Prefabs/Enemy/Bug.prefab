@@ -556,10 +556,10 @@ MonoBehaviour:
   chaseRange: 3
   attackRange: 3
   moveRadius: 4
+  distanceToPlayer: 0
   obstaclesLayer:
     serializedVersion: 2
     m_Bits: 64
-  distanceToPlayer: 0
 --- !u!114 &4700539313345675606
 MonoBehaviour:
   m_ObjectHideFlags: 0

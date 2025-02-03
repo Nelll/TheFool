@@ -4,11 +4,9 @@ using UnityEngine;
 public class DealDamageOnContact : MonoBehaviour
 {
     [SerializeField] GameObject prefab;
-
+    
     Health health;
     int damage;
-
-
     private void OnTriggerEnter(Collider other)
     {
         // 플레이어가 데미지를 받을 경우
@@ -28,7 +26,7 @@ public class DealDamageOnContact : MonoBehaviour
         }
 
         // 보스 몬스터가 데미지를 받을 경우
-        if(other.CompareTag("BossMonster") && other.GetComponentInParent<Health>().isInvincibilityTime == false)
+        if(other.CompareTag("BossMonster") && other.GetComponentInParent<Health>().isInvincibilityTime == false && prefab.CompareTag("Player"))
         {
             damage = prefab.GetComponent<DamageManager>().Damage;
             other.GetComponentInParent<Health>().TakeDamage(damage);
@@ -37,7 +35,7 @@ public class DealDamageOnContact : MonoBehaviour
         }
 
         // 일반 몬스터가 데미지를 받을 경우
-        if (other.CompareTag("Monster") && other.GetComponent<Health>().isInvincibilityTime == false)
+        if (other.CompareTag("Monster") && other.GetComponent<Health>().isInvincibilityTime == false && prefab.CompareTag("Player"))
         {
             damage = prefab.GetComponent<DamageManager>().Damage;
             other.GetComponent<Health>().TakeDamage(damage);
