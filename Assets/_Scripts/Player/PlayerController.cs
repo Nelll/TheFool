@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     // * 추가한 부분
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(1.0f); // 1초 후 활성화
+        yield return new WaitForSeconds(5.0f); // 3초 후 활성화
         isSoundEnabled = true;
     }
 
