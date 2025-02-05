@@ -1,11 +1,19 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
+using UnityEngine.SocialPlatforms.Impl;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] TMP_Text ScoreLabel;
+    [SerializeField] TMP_Text currentTimeText;
 
     private void Start()
     {
+        float savedScoreFloat = PlayerPrefs.GetFloat("currentScore", 0);
+        string currentScoreString = savedScoreFloat.ToString("#.###");
+
+        currentTimeText.text = currentScoreString;
+
         string[] scores = PlayerPrefs.GetString("HighScores", "").Split(',');
         string result = "";
 
@@ -16,4 +24,5 @@ public class ScoreManager : MonoBehaviour
 
         ScoreLabel.text = result;
     }
+
 }

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
             {
                 GameObject singletonObject = new GameObject("GameManager");
                 instance = singletonObject.AddComponent<GameManager>();
+                singletonObject.AddComponent<PlayTimer>();
 
                 DontDestroyOnLoad(singletonObject);
             }
@@ -20,17 +21,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    GameObject target;
-
-    public float playTime = 0;
-
-    private bool isCleared;
-
-    public bool IsCleared {  get { return isCleared; } }
+    public float playTime;
+    public bool isCleared;
 
     private void Start()
     {
+        playTime = 0;
         isCleared = false;
+        Time.timeScale = 1f;
     }
 
     private void Update()

@@ -24,15 +24,17 @@ public class PlayerSoundManager : MonoBehaviour
     private void Awake()
     {
         // 싱글톤 패턴 설정
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //if (Instance == null)
+        //{
+        //    Instance = this;
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+
+        Instance = this;
     }
 
     // * 추가한 부분

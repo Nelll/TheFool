@@ -15,7 +15,10 @@ public class MPRecovery : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.F))
             {
-                GetComponent<AudioSource>().PlayOneShot(recoverySound);
+                if(GetComponent<AudioSource>().isPlaying == false)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(recoverySound);
+                }
                 mentalPoint.Restore(recoveryPoint);
                 isRecovery = true;
                 StartCoroutine(recoveryActive());
