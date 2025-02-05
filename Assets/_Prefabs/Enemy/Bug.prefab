@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8137953208718349740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethLowerRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5368825525212399534}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethLowerLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7260693670126335651}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawLowerRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3786578990757692938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftMiddle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1899760170781583092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7960122517404627730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftMiddle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6894544439221150451}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftBack_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1002571199328165243}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawUpperRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8261355647897571194}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftBack_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3684692556260981824}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightBack_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4908737685725727013}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftFront_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7880796385839187760}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightBack_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7403301262018948173}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5679671694301063571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethLowerRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 7476772674310334470}
   - component: {fileID: 4308675795663757034}
   - component: {fileID: 8855484451452489189}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bug
   m_TagString: Monster
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b367fdfca9da54c8c7a77da799329a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincibilityTime: 1
+  invincibilityTime: 0.5
   maxHealth: 0
   currentHealth: 0
   isDead: 0
@@ -790,7 +790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6526330999506141725}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawUpperRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7941834470243236175}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -853,7 +853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8843813803724194953}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightFront_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133997258376811603}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,7 +917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4021321312888983255}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethUpperRight_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -949,7 +949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4657832177875324791}
   - component: {fileID: 7767020362976971306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SK_MuscomorphWingLeftB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6211065727503956555}
   - component: {fileID: 8665625340421407589}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SK_Muscomorph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9037221536131512937}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6112515609095403440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1234,7 +1234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4026131156267175539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightBack_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,7 +1265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4567834214282529666}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightMiddle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1297,7 +1297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6747957587367531484}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawLowerLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,7 +1329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2684745330138524064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawLowerLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 641980073290494709}
   - component: {fileID: 7762602520778073430}
   - component: {fileID: 8206981295843102160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HitTrigger
   m_TagString: HitBox
   m_Icon: {fileID: 0}
@@ -1428,7 +1428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4390813424864851622}
   - component: {fileID: 7626723579872320913}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SK_MuscomorphWingRighA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8762350738665029544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawLowerRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1554,7 +1554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 857863233791383080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftFront_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2251218456873201694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftBack_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6437193641039614464}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_WingRight_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1649,7 +1649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8014423943244647101}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1681,7 +1681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3181855800680253850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_WingLeft_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 755713098987617369}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightMiddle_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1744,7 +1744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4637215511674109237}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethLowerLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1777,7 +1777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5642768982924047923}
   - component: {fileID: 2613850822793756571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SK_MuscomorphWingRightB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1869,7 +1869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4962640022908764626}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethUpperRight_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1901,7 +1901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1054532824828388718}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftBack_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1933,7 +1933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7940830731976697855}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_WingLeft_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1964,7 +1964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 986386821096077582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethUpperLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1996,7 +1996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072244596402019089}
   - component: {fileID: 4239550500789964284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SK_MuscomorphTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2091,7 +2091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4456443209563996254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_TeethUpperLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2123,7 +2123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3138016684840446328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightFront_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2155,7 +2155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35031358313946251}
   - component: {fileID: 1194766315617855715}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SK_MuscomorphWingLeftA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2250,7 +2250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6573349135055022592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightMiddle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2282,7 +2282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8876109671085824425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawUpperLeft_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,7 +2313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2598029786903635104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2364,7 +2364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6029618861318588755}
   - component: {fileID: 7767283691753853592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SK_MuscomorphHorns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2456,7 +2456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3562111996736098008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2488,7 +2488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4140903363169465224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_JawUpperLeft_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2520,7 +2520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2958685863876070926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftMiddle_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2552,7 +2552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8701986750145270398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftFront_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2583,7 +2583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6636224240487105769}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_Tail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2615,7 +2615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1372862682739605248}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightBack_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2647,7 +2647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605031859362220457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_WingRight_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2678,7 +2678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7159991003646192751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightFront_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2710,7 +2710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3288921532485417210}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightFront_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2742,7 +2742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9085192867761310632}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegRightMiddle_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2773,7 +2773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6008439900837955748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftFront_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2805,7 +2805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3501724416633948718}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muscomorph_LegLeftMiddle_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2839,9 +2839,17 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 7362429928558601806}
+    - target: {fileID: 7392759961410519767, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7415732803647335858, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
       propertyPath: m_Name
       value: MonsterStatCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415732803647335858, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7928277140776244025, guid: 7beaae58d88884b4cb1e4cbd7ee8b856, type: 3}
       propertyPath: m_Pivot.x

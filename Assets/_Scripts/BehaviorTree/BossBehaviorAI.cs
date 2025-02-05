@@ -236,26 +236,26 @@ public class BossBehaviorAI : MonoBehaviour
 
     void FirstPhase()
     {
-        if (rand <= 2) // 20퍼센트 확률로 쉬기
+        if (rand <= 3) // 30퍼센트 확률로 쉬기
         {
             StartIdle();
         }
-        else if (rand <= 4) // 20퍼센트 확률로 발톱 공격
+        else if (rand <= 5) // 20퍼센트 확률로 발톱 공격
         {
             if (Vector3.Distance(detectedPlayer.position, transform.position) < 4f)
             {
                 StartAttack02();
             }
         }
-        else if (rand <= 6) // 20퍼센트 확률로 물기
+        else if (rand <= 7) // 20퍼센트 확률로 물기
         {
             StartAttack01();
         }
-        else if (rand <= 8) // 20퍼센트 확률로 꼬리치기
+        else if (rand <= 9) // 20퍼센트 확률로 꼬리치기
         {
             StartTailAttack();
         }
-        else if (rand <= 10) // 20퍼센트 확률 브레스
+        else if (rand <= 10) // 10퍼센트 확률 브레스
         {
             StartBreathe();
         }
@@ -263,30 +263,30 @@ public class BossBehaviorAI : MonoBehaviour
 
     void SecondPhase()
     {
-        if (rand <= 1) // 10퍼센트 확률로 쉬기
+        if (rand <= 2) // 20퍼센트 확률로 쉬기
         {
             StartIdle();
         }
-        else if (rand <= 2) // 10퍼센트 확률로 발톱 공격
+        else if (rand <= 3) // 10퍼센트 확률로 발톱 공격
         {
             if (Vector3.Distance(detectedPlayer.position, transform.position) < 4f)
             {
                 StartAttack02();
             }
         }
-        else if (rand <= 3) // 10퍼센트 확률로 물기
+        else if (rand <= 4) // 10퍼센트 확률로 물기
         {
             StartAttack01();
         }
-        else if (rand <= 4)   // 10퍼센트 확률로 꼬리치기
+        else if (rand <= 5)   // 10퍼센트 확률로 꼬리치기
         {
             StartTailAttack();
         }
-        else if (rand <= 6)   // 20퍼센트 확률로 지상 브레스
+        else if (rand <= 7)   // 20퍼센트 확률로 지상 브레스
         {
             StartBreathe();
         }
-        else if (rand <= 8)   // 20퍼센트 확률로 지면 강타
+        else if (rand <= 8)   // 10퍼센트 확률로 지면 강타
         {
             StartFlyAttack();
         }

@@ -20,6 +20,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    GameObject target;
+
+    public float playTime = 0;
+
+    private bool isCleared;
+
+    public bool IsCleared {  get { return isCleared; } }
+
+    private void Start()
+    {
+        isCleared = false;
+    }
+
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().name == "GameScene")
+        {
+            playTime += Time.deltaTime;
+        }
+    }
+
     public void LoadMenuScene()
     {
         SceneManager.LoadScene("MenuScene");
@@ -31,7 +52,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadGameWin()
     {
-        SceneManager.LoadScene("GameWinScene");
+        isCleared = true;
     }
 
     public void LoadGameOver()

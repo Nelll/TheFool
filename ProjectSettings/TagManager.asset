@@ -11,6 +11,7 @@ TagManager:
   - MonsterDamage
   - Monster
   - BossMonster
+  - Score
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - Background
   - Breathe
   - HitBox
-  - 
-  - 
+  - Recovery
+  - Monster
   - 
   - 
   - 

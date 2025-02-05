@@ -16,6 +16,6 @@ MonoBehaviour:
   name: Player
   health: 2000
   mentalPoint: 100
-  attack: 50
-  ultimateAttackDamage: 60
+  attack: 100
+  ultimateAttackDamage: 300
   defense: 0

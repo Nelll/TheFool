@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
             damageManager.Damage = playerStatus.UltimateAttackDamage;  // 궁극기 공격 데미지 적용
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             playerAnimator.OnRoll();
             playerMovement.Roll();

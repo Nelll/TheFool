@@ -16,6 +16,6 @@ MonoBehaviour:
   name: BoneDragon
   health: 2000
   mentalPoint: 0
-  attack: 60
+  attack: 100
   ultimateAttackDamage: 0
   defense: 0
